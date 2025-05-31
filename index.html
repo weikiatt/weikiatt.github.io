@@ -3,9 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lee Wei Kiat</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>LEE WEI KIAT</title>
   </head>
   <body>
-    test
+    <nav class="custom-navbar">
+      <div class="navbar-brand">LEE WEI KIAT</div>
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#education">EDUCATION</a></li>
+        <li><a href="#experience">EXPERIENCE</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+    <div class="section-container" id="about" style="margin-bottom: 10vh">
+      <div>
+        <span style="font-weight: 300">Hello, I'm</span>
+        <span style="font-weight: 500; font-size: 3rem">Wei Kiat</span>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="container" id="education">
+      <div class="row">
+        <h6>EDUCATION</h6>
+        <hr />
+      </div>
+      <div class="row">
+        <div class="col-md-1 d-none d-md-block">
+          <img src="/images/nus_logo_full-horizontal.jpg" class="logo" />
+        </div>
+        <div class="col-md-9">
+          <h5>National University of Singapore</h5>
+          <h6><i>School of Computing</i></h6>
+          <h6>Bachelor of Science in Business Analytics</h6>
+          <ul>
+            <li>
+              Cumulative GPA:
+              <b>4.71/5 - Honours (Highest Distinction)</b>
+            </li>
+            <li>
+              Prospective Specialisation in
+              <b>Machine Learning based Analytics</b>
+            </li>
+            <li>Expected Graduation: <b>Dec 2026</b></li>
+          </ul>
+          <h6>Relevant Coursework</h6>
+          <ul>
+            <li>Programming Methodology I & II</li>
+            <li>Data Management & Visualization</li>
+            <li>Econometrics Modelling for Business Analytics</li>
+            <li>Data Structure & Algorithms</li>
+            <li>Feature Engineering</li>
+            <li>Big Data Analytics</li>
+            <li>Machine Learning for Predictive Analytics</li>
+            <li>Calculus & Linear Algebra</li>
+          </ul>
+        </div>
+        <div class="col-md-2">Aug 2023 - Present</div>
+      </div>
+    </div>
+
+    <!-- WORK EXPERIENCE -->
+    <div class="container" id="experience">
+      <div class="row mt-4">
+        <h6>WORK EXPERIENCE</h6>
+        <hr />
+      </div>
+      <div class="row">
+        <div class="col-md-1 d-none d-md-block">
+          <img src="/images/ALPS_logo.gif" class="logo" />
+        </div>
+        <div class="col-md-9">
+          <h5>ALPS</h5>
+          <h6><i>Data Analytics and Information System Intern</i></h6>
+          <ul>
+            <li>TBC</li>
+            <li>TBC</li>
+          </ul>
+        </div>
+        <div class="col-md-2">June 2025 - Dec 2025</div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-1 d-none d-md-block">
+          <img src="/images/SAF_signals_logo.png" class="logo" />
+        </div>
+        <div class="col-md-9">
+          <h5>Singapore Armed Forcces</h5>
+          <h6><i>Signaller</i></h6>
+          <ul>
+            <li>
+              Conducted weekly inspections and maintenance of communication
+              equipment to ensure operational readiness
+            </li>
+            <li>
+              Provided support during daily training exercises, facilitating
+              smooth communication among teams.
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-2">Jul 2021 - May 2023</div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-1 d-none d-md-block">
+          <img src="/images/Deloitte.png" class="logo" />
+        </div>
+        <div class="col-md-9">
+          <h5>Deloitte</h5>
+          <h6><i>Risk Advisory Intern</i></h6>
+          <ul>
+            <li>
+              Performed journey testing on client's data using ACL to assess
+              process accuracy.
+            </li>
+            <li>
+              Identified and analysed potential risk areas to recommend
+              mitigation strategies.
+            </li>
+            <li>
+              Evaluated effectiveness of client's system controls, contributing
+              to improved compliance and security.
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-2">Sep 2020 - Feb 2021</div>
+      </div>
+    </div>
+
+    <div class="container" id="projects">
+      <div class="row">
+        <h6>PROJECTS</h6>
+        <hr />
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="/images/nus_logo_full-horizontal.jpg" style="width: 100%" />
+          <div class="container">
+            <div class="box">Github</div>
+            <div class="box">Link</div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <h5>BT4221 Predicting Loan Defaults</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="/images/nus_logo_full-horizontal.jpg" style="width: 100%" />
+        </div>
+        <div class="col-md-8">
+          <h5>BT3103 - The Fair Tracker</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="/images/nus_logo_full-horizontal.jpg" style="width: 100%" />
+        </div>
+        <div class="col-md-8">
+          <h5>BT4240 Predicting HDB Flat Prices</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <img src="/images/nus_logo_full-horizontal.jpg" style="width: 100%" />
+        </div>
+        <div class="col-md-6">
+          <h5>NUS Orbital</h5>
+        </div>
+        <div class="col-md-2">
+          <h5>NUS Orbital</h5>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

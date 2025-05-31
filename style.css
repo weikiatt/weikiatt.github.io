@@ -1,0 +1,124 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI";
+  background-color: #f9f9f9;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+.custom-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 16px 32px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Default navbar style */
+.custom-navbar {
+  background-color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* When page is scrolled down */
+.custom-navbar.scrolled {
+  background-color: #f1f1f1;
+  /* Change to your desired color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: darkslategrey;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #C1E1C1;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;    
+  color: #C1E1C1;
+  cursor: pointer;
+}
+
+.container {
+  margin-top: 2rem;
+}
+
+.row {
+  margin-top: 200px;
+}
+
+.title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.logo {
+  width: 60px;
+}
+
+.box {
+  padding: 5px;
+  border: 1px solid black;
+  display: inline-block;
+  font-size: 0.7rem;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+    border-top: 1px solid #eee;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links li {
+    padding: 12px 24px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
