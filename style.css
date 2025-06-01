@@ -3,11 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: darkslategrey;
 }
 
 body {
   font-family: "Segoe UI";
-  background-color: #f9f9f9;
+  background-color: white;
   font-weight: 200;
   margin: 0;
   padding: 0;
@@ -73,8 +74,15 @@ body {
   margin-top: 2rem;
 }
 
-.row {
-  margin-top: 200px;
+.about-container {
+  background-color: #C1E1C1;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.project-container {
+  background-color: #f0f0f0;
+  padding: 1rem;
 }
 
 .title {
@@ -87,10 +95,34 @@ body {
 }
 
 .box {
-  padding: 5px;
+  padding: 10px 20px;
   border: 1px solid black;
   display: inline-block;
   font-size: 0.7rem;
+}
+
+.btn-download {
+  display: inline-block;
+  background-color: #C1E1C1;
+  color: darkslategrey;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+  background-color: darkslategrey;
+  color: white;
+}
+
+.site-footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 40px;
 }
 
 /* Mobile styles */
