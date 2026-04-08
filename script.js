@@ -33,7 +33,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Fade-in on scroll
+// Fade-in on scroll — only for elements below the initial viewport
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -43,11 +43,17 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.12 }
+  { threshold: 0.1 }
 );
 
-document.querySelectorAll(".timeline-item, .project-card, .section-header, .hero-text, .hero-visual").forEach((el, i) => {
-  el.classList.add("fade-up");
-  el.style.transitionDelay = `${(i % 4) * 80}ms`;
-  observer.observe(el);
+const viewportHeight = window.innerHeight;
+
+document.querySelectorAll(".timeline-item, .project-card, .section-header").forEach((el, i) => {
+  const rect = el.getBoundingClientRect();
+  // Only animate elements that start below the fold
+  if (rect.top > viewportHeight) {
+    el.classList.add("fade-up");
+    el.style.transitionDelay = `${(i % 4) * 80}ms`;
+    observer.observe(el);
+  }
 });
