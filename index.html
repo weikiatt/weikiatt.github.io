@@ -3,371 +3,274 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-
-    <title>LEE WEI KIAT</title>
+    <title>Lee Wei Kiat</title>
   </head>
   <body>
     <nav class="custom-navbar">
       <div class="navbar-brand">LEE WEI KIAT</div>
       <ul class="navbar-links" id="navbar-links">
-        <li><a href="#about">ABOUT ME</a></li>
+        <li><a href="#about">ABOUT</a></li>
         <li><a href="#education">EDUCATION</a></li>
         <li><a href="#experience">EXPERIENCE</a></li>
         <li><a href="#projects">PROJECTS</a></li>
       </ul>
       <div class="hamburger" id="hamburger">&#9776;</div>
     </nav>
-    <div class="about-container">
-      <div class="container" id="about">
-        <div class="row">
-          <h3><span style="font-weight: 1000">ABOUT ME</span></h3>
-          <hr />
-        </div>
-        <div class="row">
-          <div class="col-md-3">
-            <img
-              src="/images/nus_logo_full-horizontal.jpg"
-              style="width: 100%"
-            />
-            <a
-              href="/files/Lee Wei Kiat Resume.pdf"
-              class="box btn-download mt-2"
-              target="_blank"
-              >Resume</a
-            >
-            <a
-              href="https://www.linkedin.com/in/lee-wei-kiat/"
-              class="box btn-download mt-2"
-              target="_blank"
-              >LinkedIn</a
-            >
-            <a
-              href="https://github.com/weikiatt"
-              class="box btn-download mt-2"
-              target="_blank"
-              >Github</a
-            >
+
+    <!-- HERO / ABOUT -->
+    <section class="hero" id="about">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-tag">Business Analytics &middot; Machine Learning</div>
+          <h1 class="hero-name">Hello, I'm<br />Wei Kiat</h1>
+          <p class="hero-bio">
+            I'm currently studying in NUS Business Analytics, pursuing a specialization in machine learning.
+            My passion lies in leveraging data to solve real-world challenges — I believe that with the right
+            data and analytical approach, it is possible to solve most problems efficiently.
+          </p>
+          <div class="hero-links">
+            <a href="/files/Lee Wei Kiat Resume.pdf" class="hero-btn" target="_blank">Resume</a>
+            <a href="https://www.linkedin.com/in/lee-wei-kiat/" class="hero-btn" target="_blank">LinkedIn</a>
+            <a href="https://github.com/weikiatt" class="hero-btn" target="_blank">GitHub</a>
           </div>
-          <div class="col-md-9">
-            <div style="font-weight: 500; font-size: 3rem">
-              Hello, I'm Wei Kiat!
-            </div>
-            <div>
-              <p>
-                I'm currently studying in NUS Business Analytics, pursuing a
-                specialization in machine learning. My passion lies in
-                leveraging data to solve real-world challenges and I find great
-                satisfaction in driving meaningful outcomes. I believe that with
-                the right data and analytical approach, it is possible to solve
-                most problems efficiently.
-              </p>
-              <p>Anyways, feel free to connect with me on LinkedIn!</p>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <img src="/images/nus_logo_full-horizontal.jpg" alt="NUS" />
+            <div class="hero-card-text">
+              <span>National University of Singapore</span>
+              <span>B.Sc. Business Analytics</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- EDUCATION -->
-    <div class="container" id="education">
-      <div class="row">
-        <h3><span style="font-weight: 1000">EDUCATION</span></h3>
-        <hr />
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <h3>Education</h3>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-logo">
+            <img src="/images/nus_logo_full-horizontal.jpg" alt="NUS" />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <div>
+                <h5>National University of Singapore</h5>
+                <div class="institution">School of Computing</div>
+                <div class="degree">Bachelor of Science in Business Analytics</div>
+              </div>
+              <div class="timeline-date">Aug 2023 – Present</div>
+            </div>
+            <ul>
+              <li>Cumulative GPA: <strong>4.71/5 — Honours (Highest Distinction)</strong></li>
+              <li>Prospective Specialisation in <strong>Machine Learning based Analytics</strong></li>
+              <li>Expected Graduation: <strong>Dec 2026</strong></li>
+            </ul>
+            <div class="coursework">
+              <span class="cw-label">Relevant Coursework</span>
+              <div class="tags">
+                <span>Programming Methodology I &amp; II</span>
+                <span>Data Management &amp; Visualization</span>
+                <span>Econometrics Modelling</span>
+                <span>Data Structures &amp; Algorithms</span>
+                <span>Feature Engineering</span>
+                <span>Big Data Analytics</span>
+                <span>Machine Learning</span>
+                <span>Calculus &amp; Linear Algebra</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-logo">
+            <img src="/images/NP Logo.png" alt="NP" />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <div>
+                <h5>Ngee Ann Polytechnic</h5>
+                <div class="institution">School of InfoComm Technology</div>
+                <div class="degree">Diploma with Merit in Financial Informatics</div>
+              </div>
+              <div class="timeline-date">Apr 2018 – Apr 2021</div>
+            </div>
+            <ul>
+              <li>Cumulative GPA: <strong>3.9379/4</strong></li>
+              <li>Specialization in <strong>Predictive Analytics</strong></li>
+            </ul>
+            <div class="coursework">
+              <span class="cw-label">Relevant Coursework</span>
+              <div class="tags">
+                <span>Programming I &amp; II</span>
+                <span>Databases</span>
+                <span>Web Application Development</span>
+                <span>Secure Software Development</span>
+                <span>User Experience</span>
+                <span>Predictive Analytics</span>
+                <span>Data Visualization</span>
+                <span>Deep Learning</span>
+                <span>Applied Analytics Finance</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-md-1 d-none d-md-block">
-          <img src="/images/nus_logo_full-horizontal.jpg" class="logo" />
-        </div>
-        <div class="col-md-9">
-          <h5>National University of Singapore</h5>
-          <h6><i>School of Computing</i></h6>
-          <h6>Bachelor of Science in Business Analytics</h6>
-          <ul>
-            <li>
-              Cumulative GPA:
-              <b>4.71/5 - Honours (Highest Distinction)</b>
-            </li>
-            <li>
-              Prospective Specialisation in
-              <b>Machine Learning based Analytics</b>
-            </li>
-            <li>Expected Graduation: <b>Dec 2026</b></li>
-          </ul>
-          <h6>Relevant Coursework</h6>
-          <ul>
-            <li>Programming Methodology I & II</li>
-            <li>Data Management & Visualization</li>
-            <li>Econometrics Modelling for Business Analytics</li>
-            <li>Data Structure & Algorithms</li>
-            <li>Feature Engineering</li>
-            <li>Big Data Analytics</li>
-            <li>Machine Learning for Predictive Analytics</li>
-            <li>Calculus & Linear Algebra</li>
-          </ul>
-        </div>
-        <div class="col-md-2">Aug 2023 - Present</div>
-      </div>
-      <div class="row">
-        <div class="col-md-1 d-none d-md-block">
-          <img src="/images/NP Logo.png" class="logo" />
-        </div>
-        <div class="col-md-9">
-          <h5>Ngee Ann Polytechnic</h5>
-          <h6><i>School of InfoComm Technology</i></h6>
-          <h6>Diploma with Merit in Financial Informatics</h6>
-          <ul>
-            <li>
-              Cumulative GPA:
-              <b>3.9379/4</b>
-            </li>
-            <li>
-              Specialization in
-              <b>Predictive Analytics</b>
-            </li>
-          </ul>
-          <h6>Relevant Coursework</h6>
-          <ul>
-            <li>Programming I & II</li>
-            <li>Databases</li>
-            <li>Web Application Development</li>
-            <li>Secure Software Development</li>
-            <li>User Experience</li>
-            <li>Software Development Methodology</li>
-            <li>Predictive Analytics</li>
-            <li>Technologies for Financial Industry</li>
-            <li>Data Visualization</li>
-            <li>Deep Learning</li>
-            <li>Applied Analytics Finance</li>
-          </ul>
-        </div>
-        <div class="col-md-2">Apr 2018 - Apr 2021</div>
-      </div>
-    </div>
+    </section>
 
     <!-- WORK EXPERIENCE -->
-    <div class="container" id="experience">
-      <div class="row mt-4">
-        <h3><span style="font-weight: 1000">WORK EXPERIENCE</span></h3>
-        <hr />
-      </div>
-      <div class="row">
-        <div class="col-md-1 d-none d-md-block">
-          <img src="/images/ALPS_logo.gif" class="logo" />
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <h3>Work Experience</h3>
         </div>
-        <div class="col-md-9">
-          <h5>ALPS</h5>
-          <h6><i>Data Analytics and Information System Intern</i></h6>
-          <ul>
-            <li>TBC</li>
-            <li>TBC</li>
-          </ul>
-        </div>
-        <div class="col-md-2">Jun 2025 - Dec 2025</div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-md-1 d-none d-md-block">
-          <img src="/images/SAF_signals_logo.png" class="logo" />
-        </div>
-        <div class="col-md-9">
-          <h5>Singapore Armed Forces</h5>
-          <h6><i>Signaller</i></h6>
-          <ul>
-            <li>
-              Conducted weekly inspections and maintenance of communication
-              equipment to ensure operational readiness
-            </li>
-            <li>
-              Provided support during daily training exercises, facilitating
-              smooth communication among teams.
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-2">Jul 2021 - May 2023</div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-md-1 d-none d-md-block">
-          <img src="/images/Deloitte.png" class="logo" />
-        </div>
-        <div class="col-md-9">
-          <h5>Deloitte</h5>
-          <h6><i>Risk Advisory Intern</i></h6>
-          <ul>
-            <li>
-              Performed journey testing on client's data using ACL to assess
-              process accuracy.
-            </li>
-            <li>
-              Identified and analysed potential risk areas to recommend
-              mitigation strategies.
-            </li>
-            <li>
-              Evaluated effectiveness of client's system controls, contributing
-              to improved compliance and security.
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-2">Sep 2020 - Feb 2021</div>
-      </div>
-    </div>
 
-    <div class="container" id="projects">
-      <div class="row">
-        <h3><span style="font-weight: 1000">PROJECTS</span></h3>
-        <hr />
-      </div>
-      <div class="row mt-4 container">
-        <div class="col-md-4">
-          <img src="/images/Lending Money.jpeg" style="width: 100%" />
-          <a
-            href="https://colab.research.google.com/drive/1pbE32PM_jfiptyG8gnwUA_1Gnuv983aK?usp=sharing"
-            class="box btn-download mt-2"
-            target="_blank"
-            >Code</a
-          >
-          <a
-            href="files/BT4221_Group2_Final_Project_Report.pdf"
-            target="_blank"
-            class="box btn-download mt-2"
-            >Report</a
-          >
+        <div class="timeline-item">
+          <div class="timeline-logo">
+            <img src="/images/ALPS_logo.gif" alt="ALPS" />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <div>
+                <h5>ALPS</h5>
+                <div class="role">Data Analytics and Information System Intern</div>
+              </div>
+              <div class="timeline-date">Jun 2025 – Dec 2025</div>
+            </div>
+            <ul>
+              <li>TBC</li>
+              <li>TBC</li>
+            </ul>
+          </div>
         </div>
-        <div class="col-md-8">
-          <h5>BT4221 Predicting Loan Defaults</h5>
-          <p>
-            This project explores loan default prediction using LendingClub’s
-            dataset (2007–2020) through machine learning. The team performed
-            extensive data cleaning, feature engineering, dimensionality
-            reduction via PCA, and addressed class imbalance using SMOTE and
-            hybrid sampling methods. Six models were evaluated, with Random
-            Forest selected as the best performer (recall: 0.8261, PR_AUC:
-            0.1890). Important predictors identified include hardship_reason,
-            grade, and home_ownership. Despite computational constraints, the
-            team optimised resources effectively and derived practical insights
-            to support LendingClub in enhancing risk management and implementing
-            tiered pricing strategies.
-          </p>
+
+        <div class="timeline-item">
+          <div class="timeline-logo">
+            <img src="/images/SAF_signals_logo.png" alt="SAF" />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <div>
+                <h5>Singapore Armed Forces</h5>
+                <div class="role">Signaller</div>
+              </div>
+              <div class="timeline-date">Jul 2021 – May 2023</div>
+            </div>
+            <ul>
+              <li>Conducted weekly inspections and maintenance of communication equipment to ensure operational readiness.</li>
+              <li>Provided support during daily training exercises, facilitating smooth communication among teams.</li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="row mt-4 project-container">
-        <div class="col-md-4">
-          <img src="/images/TFT.png" style="width: 100%" />
-          <img src="/images/TFT2.png" style="width: 100%" />
-          <a
-            href="https://l2-2425s2l2-group-2.web.app/"
-            class="box btn-download mt-2"
-            target="_blank"
-            >App</a
-          >
-        </div>
-        <div class="col-md-8">
-          <h5>BT3103 The Fair Tracker</h5>
-          <p>
-            The primary goal of this project is to develop a web-based
-            centralised platform to provide price transparency across multiple
-            supermarkets to consumers.
-          </p>
-          <p>
-            Essentially, the platform aims to streamline prices as well as
-            consumers’ shopping experience by offering price comparisons and
-            additional features to alleviate the trouble of searching for the
-            best deals.
-          </p>
-          <p>
-            The key features of the app include grocery price comparison across
-            different supermarket chains, a favourites function, a grocery list
-            feature that allows users to keep track of their purchases, and a
-            store locator function.
-          </p>
+
+        <div class="timeline-item">
+          <div class="timeline-logo">
+            <img src="/images/Deloitte.png" alt="Deloitte" />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <div>
+                <h5>Deloitte</h5>
+                <div class="role">Risk Advisory Intern</div>
+              </div>
+              <div class="timeline-date">Sep 2020 – Feb 2021</div>
+            </div>
+            <ul>
+              <li>Performed journey testing on client's data using ACL to assess process accuracy.</li>
+              <li>Identified and analysed potential risk areas to recommend mitigation strategies.</li>
+              <li>Evaluated effectiveness of client's system controls, contributing to improved compliance and security.</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="row mt-4 container">
-        <div class="col-md-4">
-          <img src="/images/HDB.jpg" style="width: 100%" />
-          <a
-            href="/files/BT4240_Group 2_Final Report.pdf"
-            target="_blank"
-            class="box btn-download mt-2"
-            >Report</a
-          >
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h3>Projects</h3>
         </div>
-        <div class="col-md-8">
-          <h5>BT4240 Predicting HDB Flat Prices</h5>
-          <p>
-            This project proposes the development of a predictive model that
-            utilizes information from comparable neighborhoods and their
-            surrounding amenities to better estimate resale flat prices
-            accurately. Through advanced data analytics, the model aims to
-            deliver actionable pricing insights to both buyers and sellers,
-            supporting more informed real estate decisions. Additionally, it
-            seeks to serve as a reliable valuation tool in data-limited areas,
-            helping to minimize uncertainty in property pricing. This project
-            aims to predict HDB resale prices using different machine learning
-            algorithms such as Linear Regression, SVM, Random Forest, and Neural
-            Network.
-          </p>
-        </div>
-      </div>
-      <div class="row mt-4 project-container">
-        <div class="col-md-4">
-          <img src="/images/H4G.png" style="width: 100%" />
-          <a
-            href="https://h4g-tft.web.app/"
-            target="_blank"
-            class="box btn-download mt-2"
-            >App</a
-          >
-          <a
-            href="https://github.com/weikiatt/Hack4Good"
-            target="_blank"
-            class="box btn-download mt-2"
-            >Github</a
-          >
-        </div>
-        <div class="col-md-8">
-          <h5>Hack4Good 2025</h5>
-          <p>
-            Hack4Good 2025 is a website development project for a Non-Profit
-            Organization "Muhammadiyah Welfare Home". Our team leveraged Vue.js
-            and Firebase for real-time data and user authentication.
-          </p>
-          <p>
-            Our web-based minimart provides a straightforward and user-friendly
-            platform for residents to purchase products using their vouchers
-            while maintaining a minimalist yet functional design. The project
-            features two core interfaces: one for residents and another for
-            administrators.
-          </p>
-        </div>
-      </div>
-      <div class="row mt-4 container">
-        <div class="col-md-4">
-          <img src="/images/Orbital.png" style="width: 100%" />
-          <a
-            href="https://github.com/weikiatt/NUS-Orbital"
-            target="_blank"
-            class="box btn-download mt-2"
-            >Github</a
-          >
-        </div>
-        <div class="col-md-8">
-          <h5>NUS Orbital</h5>
-          <p>
-            Being students ourselves in NUS, we often find it difficult to
-            foster collaborative learning between peers due to the lack of
-            platforms for student interaction within specific modules or
-            courses. To address this, we created a website forum similar to
-            reddit/piazza and NUSMods. This forum will be accessible to all
-            students, providing convenience and inclusive space for students to
-            engage with each other.
-          </p>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-img">
+              <img src="/images/Lending Money.jpeg" alt="Loan Default Prediction" />
+            </div>
+            <div class="project-body">
+              <h5>BT4221 &mdash; Predicting Loan Defaults</h5>
+              <p>Explored loan default prediction using LendingClub's dataset (2007–2020) through machine learning. Performed extensive data cleaning, feature engineering, dimensionality reduction via PCA, and addressed class imbalance using SMOTE. Six models were evaluated, with Random Forest selected as the best performer (recall: 0.8261, PR_AUC: 0.1890).</p>
+              <div class="project-links">
+                <a href="https://colab.research.google.com/drive/1pbE32PM_jfiptyG8gnwUA_1Gnuv983aK?usp=sharing" class="btn-tag" target="_blank">Code</a>
+                <a href="files/BT4221_Group2_Final_Project_Report.pdf" target="_blank" class="btn-tag">Report</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img multi-img">
+              <img src="/images/TFT.png" alt="The Fair Tracker" />
+              <img src="/images/TFT2.png" alt="The Fair Tracker 2" />
+            </div>
+            <div class="project-body">
+              <h5>BT3103 &mdash; The Fair Tracker</h5>
+              <p>A web-based centralised platform providing price transparency across multiple supermarkets. Features grocery price comparison, a favourites function, grocery list tracking, and a store locator — streamlining the shopping experience for deal-seekers.</p>
+              <div class="project-links">
+                <a href="https://l2-2425s2l2-group-2.web.app/" class="btn-tag" target="_blank">App</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img">
+              <img src="/images/HDB.jpg" alt="HDB Flat Prices" />
+            </div>
+            <div class="project-body">
+              <h5>BT4240 &mdash; Predicting HDB Flat Prices</h5>
+              <p>Developed a predictive model utilising neighbourhood and amenity information to estimate HDB resale flat prices. Evaluated Linear Regression, SVM, Random Forest, and Neural Networks, aiming to deliver actionable pricing insights to buyers and sellers.</p>
+              <div class="project-links">
+                <a href="/files/BT4240_Group 2_Final Report.pdf" target="_blank" class="btn-tag">Report</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img">
+              <img src="/images/H4G.png" alt="Hack4Good" />
+            </div>
+            <div class="project-body">
+              <h5>Hack4Good 2025</h5>
+              <p>Website development for "Muhammadiyah Welfare Home" using Vue.js and Firebase. Built a web-based minimart for residents to purchase products using vouchers, featuring resident and administrator interfaces with real-time data and user authentication.</p>
+              <div class="project-links">
+                <a href="https://h4g-tft.web.app/" target="_blank" class="btn-tag">App</a>
+                <a href="https://github.com/weikiatt/Hack4Good" target="_blank" class="btn-tag">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-img">
+              <img src="/images/Orbital.png" alt="NUS Orbital" />
+            </div>
+            <div class="project-body">
+              <h5>NUS Orbital</h5>
+              <p>A student forum website designed to foster collaborative learning between NUS peers. Similar to Reddit/Piazza and NUSMods, providing an inclusive space for students to engage with each other across modules and courses.</p>
+              <div class="project-links">
+                <a href="https://github.com/weikiatt/NUS-Orbital" target="_blank" class="btn-tag">GitHub</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
     <footer class="site-footer">
       <p>&copy; 2025 Lee Wei Kiat. All rights reserved.</p>
     </footer>
