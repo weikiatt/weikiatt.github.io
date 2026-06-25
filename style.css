@@ -250,7 +250,7 @@ body {
    ========================================= */
 .timeline-item {
   display: grid;
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 100px 1fr;
   gap: 1.5rem;
   background: var(--surface);
   border-radius: var(--radius);
@@ -274,8 +274,8 @@ body {
 }
 
 .timeline-logo img {
-  width: 48px;
-  height: 48px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   border-radius: 8px;
   background: #f8f8f8;
@@ -405,7 +405,7 @@ body {
   position: relative;
   overflow: hidden;
   background: #f0f0f0;
-  min-height: 200px;
+  min-height: 240px;
 }
 
 .project-img img {
