@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Predicting Loan Defaults | Lee Wei Kiat</title>
+  </head>
+  <body>
+    <nav class="custom-navbar">
+      <div class="navbar-brand"><a href="index.html" style="text-decoration:none; color:inherit;">LEE WEI KIAT</a></div>
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="index.html#about">ABOUT</a></li>
+        <li><a href="index.html#education">EDUCATION</a></li>
+        <li><a href="index.html#experience">EXPERIENCE</a></li>
+        <li><a href="index.html#projects">PROJECTS</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <section class="project-page-section">
+      <div class="container">
+        <div class="section-header">
+          <h3>Predicting Loan Defaults (BT4221)</h3>
+        </div>
+        <div class="project-details-card">
+          <h4 class="details-heading">The Problem</h4>
+          <p class="details-text">Financial institutions face significant risk from loan defaults. Accurately predicting potential defaulters allows for better risk management and resource allocation. However, historical loan datasets are often massive, highly imbalanced (most people do not default), and feature-rich, requiring sophisticated preprocessing and modeling.</p>
+          
+          <h4 class="details-heading">The Solution</h4>
+          <p class="details-text">I built and evaluated several machine learning models prioritizing a high recall rate to detect potential defaulters using LendingClub's extensive dataset spanning from 2007 to 2020 (comprising 2.9 million loan records).</p>
+
+          <h4 class="details-heading">Key Details & Methodologies</h4>
+          <ul class="details-list">
+            <li class="details-list-item"><strong>Big Data Processing</strong>: Leveraged PySpark to handle and process the 2.9 million records efficiently.</li>
+            <li class="details-list-item"><strong>Feature Engineering & PCA</strong>: Cleaned the data and reduced dimensionality from 83 features down to 62 key components using Principal Component Analysis (PCA).</li>
+            <li class="details-list-item"><strong>Handling Class Imbalance</strong>: Implemented SMOTE (Synthetic Minority Over-sampling Technique) and ENN (Edited Nearest Neighbours) to balance the target classes for better model training.</li>
+            <li class="details-list-item"><strong>Model Evaluation</strong>: Trained and compared 6 different models including Logistic Regression, Random Forest, SVM, and Gradient Boosted Trees. Random Forest was selected as the best performer, achieving a recall of 0.8261 and a PR_AUC of 0.1890.</li>
+          </ul>
+
+          <div>
+            <a href="index.html#projects" class="btn-case-study">&larr; Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Lee Wei Kiat. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

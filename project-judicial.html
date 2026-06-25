@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Judicial Analytics | Lee Wei Kiat</title>
+  </head>
+  <body>
+    <nav class="custom-navbar">
+      <div class="navbar-brand"><a href="index.html" style="text-decoration:none; color:inherit;">LEE WEI KIAT</a></div>
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="index.html#about">ABOUT</a></li>
+        <li><a href="index.html#education">EDUCATION</a></li>
+        <li><a href="index.html#experience">EXPERIENCE</a></li>
+        <li><a href="index.html#projects">PROJECTS</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <section class="project-page-section">
+      <div class="container">
+        <div class="section-header">
+          <h3>Judicial Analytics</h3>
+        </div>
+        <div class="project-details-card">
+          <h4 class="details-heading">The Problem</h4>
+          <p class="details-text">Predicting defendant liability in Singapore corporate litigation is incredibly complex due to multi-level legal nuances, extensive case documentation, and the subjective nature of judicial decision-making. Legal professionals spend countless hours analyzing PDFs of past case law.</p>
+          
+          <h4 class="details-heading">The Solution</h4>
+          <p class="details-text">I developed a deep learning pipeline to predict defendant liability based on unstructured legal documents. By transforming dense legal text into structured data and feeding it into an advanced neural network architecture, the system provides an objective, data-driven assessment of litigation outcomes.</p>
+
+          <h4 class="details-heading">Key Features & Architecture</h4>
+          <ul class="details-list">
+            <li class="details-list-item"><strong>3-Stage GPT Pipeline</strong>: Engineered a robust pipeline to process raw PDF documents into ML-ready JSON using an LLM-as-a-Judge methodology for high-fidelity data extraction.</li>
+            <li class="details-list-item"><strong>Hierarchical Attention Network (HAN)</strong>: Built a custom HAN to effectively capture multi-level legal nuances from the document text.</li>
+            <li class="details-list-item"><strong>SwiGLU Activation</strong>: Enhanced the network's predictive capability and training stability by implementing the SwiGLU activation function.</li>
+          </ul>
+
+          <div>
+            <a href="index.html#projects" class="btn-case-study">&larr; Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 Lee Wei Kiat. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
