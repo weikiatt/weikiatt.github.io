@@ -58,7 +58,7 @@ const modalHtml = `
       </div>
     </div>
 `;
-indexHtml = indexHtml.replace('</body>', modalHtml + '\n  </body>');
+indexHtml = indexHtml.replace('<script src="script.js"></script>', modalHtml + '\n    <script src="script.js"></script>');
 
 // Make .project-card clickable
 indexHtml = indexHtml.replace(/<div class="project-card">/g, '<div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">');

@@ -796,4 +796,178 @@ body {
 /* =========================================
    MODAL
    ========================================= */
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; padding: 1.5rem; } .modal-overlay.active { opacity: 1; visibility: visible; } .modal-content { background: var(--surface); border-radius: var(--radius); width: 100%; max-width: 700px; max-height: 90vh; overflow-y: auto; position: relative; transform: translateY(20px) scale(0.95); transition: transform 0.3s ease; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); padding: 2.5rem; } .modal-overlay.active .modal-content { transform: translateY(0) scale(1); } .modal-close { position: absolute; top: 1.25rem; right: 1.25rem; background: var(--bg-alt); border: none; font-size: 1.5rem; color: var(--text-muted); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; } .modal-close:hover { background: #ffe5e5; color: #d90429; } .modal-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); } .modal-header h3 { font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.75rem; } .modal-body .details-heading { color: var(--primary); margin-bottom: 1rem; font-size: 1.15rem; } .modal-body .details-text { margin-bottom: 2rem; color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; } .modal-body .details-list { margin-bottom: 2rem; color: var(--text-muted); line-height: 1.8; padding-left: 1.5rem; font-size: 0.95rem; } .modal-body .details-list-item { margin-bottom: 0.5rem; }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 67, 50, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--surface);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 750px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(40px) scale(0.97);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+/* Custom scrollbar for modal content */
+.modal-content::-webkit-scrollbar {
+  width: 14px;
+}
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 24px 0; /* Prevents scrollbar from overlapping top/bottom rounded corners */
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 10px;
+  border: 4px solid var(--surface); /* Creates an inset padding effect */
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-light);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  background: #fff0f0;
+  color: #ef4444;
+  border-color: #fecaca;
+  transform: rotate(90deg) scale(1.1);
+}
+
+.modal-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  padding-right: 3rem; /* Leave space for close button */
+}
+
+.modal-header h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.modal-header .tech-tags {
+  margin-bottom: 0;
+}
+
+.modal-header .tech-tags span {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.modal-body .details-heading {
+  color: var(--primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.modal-body .details-heading:first-child {
+  margin-top: 0;
+}
+
+.modal-body .details-text {
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.modal-body .details-list {
+  margin-bottom: 2rem;
+  color: var(--text);
+  line-height: 1.85;
+  padding-left: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.modal-body .details-list-item {
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.modal-body .details-list-item::marker {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 2.5rem 1.5rem;
+    max-height: 90vh;
+  }
+  .modal-header h3 {
+    font-size: 1.5rem;
+  }
+  .modal-close {
+    top: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+  .modal-header {
+    padding-right: 2rem;
+  }
+}

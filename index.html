@@ -507,13 +507,206 @@
         </div>
       </div>
     </section>
+          <ul class="details-list">
+            <li class="details-list-item"><strong>3-Stage GPT Pipeline</strong>: Engineered a robust pipeline to process raw PDF documents into ML-ready JSON using an LLM-as-a-Judge methodology for high-fidelity data extraction.</li>
+            <li class="details-list-item"><strong>Hierarchical Attention Network (HAN)</strong>: Built a custom HAN to effectively capture multi-level legal nuances from the document text.</li>
+            <li class="details-list-item"><strong>SwiGLU Activation</strong>: Enhanced the network's predictive capability and training stability by implementing the SwiGLU activation function.</li>
+          </ul>
+      </div>
+    
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
+            <div class="project-img">
+              <img src="/images/Lending Money.jpeg" alt="Loan Default Prediction" />
+            </div>
+            <div class="project-body">
+              <h5>Predicting Loan Defaults</h5>
+              <div class="tech-tags">
+                <span>PySpark</span><span>Machine Learning</span><span>PCA</span>
+              </div>
+              <p>Built high-recall ML models to detect potential defaulters using 2.9M LendingClub records, utilizing PySpark and handling class imbalance.</p>
+              <div class="project-links">
+                
+      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
+      <div class="project-case-study-content" style="display: none;">
+        <h4 class="details-heading">The Problem</h4>
+          <p class="details-text">Financial institutions face significant risk from loan defaults. Accurately predicting potential defaulters allows for better risk management and resource allocation. However, historical loan datasets are often massive, highly imbalanced (most people do not default), and feature-rich, requiring sophisticated preprocessing and modeling.</p>
+          
+          <h4 class="details-heading">The Solution</h4>
+          <p class="details-text">I built and evaluated several machine learning models prioritizing a high recall rate to detect potential defaulters using LendingClub's extensive dataset spanning from 2007 to 2020 (comprising 2.9 million loan records).</p>
+
+          <h4 class="details-heading">Key Details & Methodologies</h4>
+          <ul class="details-list">
+            <li class="details-list-item"><strong>Big Data Processing</strong>: Leveraged PySpark to handle and process the 2.9 million records efficiently.</li>
+            <li class="details-list-item"><strong>Feature Engineering & PCA</strong>: Cleaned the data and reduced dimensionality from 83 features down to 62 key components using Principal Component Analysis (PCA).</li>
+            <li class="details-list-item"><strong>Handling Class Imbalance</strong>: Implemented SMOTE (Synthetic Minority Over-sampling Technique) and ENN (Edited Nearest Neighbours) to balance the target classes for better model training.</li>
+            <li class="details-list-item"><strong>Model Evaluation</strong>: Trained and compared 6 different models including Logistic Regression, Random Forest, SVM, and Gradient Boosted Trees. Random Forest was selected as the best performer, achieving a recall of 0.8261 and a PR_AUC of 0.1890.</li>
+          </ul>
+      </div>
+    
+                <a href="https://colab.research.google.com/drive/1pbE32PM_jfiptyG8gnwUA_1Gnuv983aK?usp=sharing" class="btn-tag" target="_blank">Code</a>
+                <a href="files/BT4221_Group2_Final_Project_Report.pdf" target="_blank" class="btn-tag">Report</a>
+              </div>
+            </div>
+          </div>
+
+           <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
+            <div class="project-img">
+              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800" alt="The Fair Tracker" />
+            </div>
+            <div class="project-body">
+              <h5>The Fair Tracker</h5>
+              <div class="tech-tags">
+                <span>Web App</span><span>UI/UX</span>
+              </div>
+              <p>A web-based centralized platform offering real-time grocery price comparisons, list tracking, and a store locator for shoppers.</p>
+              <div class="project-links">
+                
+      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
+      <div class="project-case-study-content" style="display: none;">
+        <h4 class="details-heading">The Problem</h4>
+          <p class="details-text">Shoppers often struggle to find the best deals for groceries across different supermarket chains. Price comparison is a tedious, manual process, making it difficult for consumers to consistently save money on their regular shopping lists.</p>
+          
+          <h4 class="details-heading">The Solution</h4>
+          <p class="details-text">I contributed to the development of "The Fair Tracker", a web-based, centralized platform that provides transparent price comparisons across multiple supermarkets, aimed at streamlining the shopping experience for deal-seekers.</p>
+
+          <h4 class="details-heading">Platform Features</h4>
+          <ul class="details-list">
+            <li class="details-list-item"><strong>Real-time Price Comparison</strong>: Compare prices of grocery items across major supermarket chains instantly.</li>
+            <li class="details-list-item"><strong>Grocery List Tracking</strong>: Users can create, save, and manage custom grocery lists to calculate total costs before visiting the store.</li>
+            <li class="details-list-item"><strong>Favourites Function</strong>: Bookmark frequently bought items for quick price checking.</li>
+            <li class="details-list-item"><strong>Store Locator</strong>: Integrated map feature to find the nearest supermarket branch carrying the required items at the best price.</li>
+          </ul>
+      </div>
+    
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
+            <div class="project-img">
+              <img src="/images/HDB.jpg" alt="HDB Flat Prices" />
+            </div>
+            <div class="project-body">
+              <h5>Predicting HDB Flat Prices</h5>
+              <div class="tech-tags">
+                <span>Predictive Modeling</span><span>OneMap API</span>
+              </div>
+              <p>Developed an accurate predictive model utilizing neighborhood amenities and OneMap API features to estimate HDB resale flat prices.</p>
+              <div class="project-links">
+                
+      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
+      <div class="project-case-study-content" style="display: none;">
+        <h4 class="details-heading">The Problem</h4>
+          <p class="details-text">Navigating the Singapore public housing market is challenging for both buyers and sellers. Determining a fair resale price involves considering a multitude of variables including flat characteristics, location, and proximity to crucial amenities.</p>
+          
+          <h4 class="details-heading">The Solution</h4>
+          <p class="details-text">I developed a predictive model to estimate HDB resale flat prices accurately. By utilizing neighborhood and amenity information alongside core flat attributes, the model provides actionable pricing insights to empower stakeholders in the housing market.</p>
+
+          <h4 class="details-heading">Methodology & Tech Stack</h4>
+          <ul class="details-list">
+            <li class="details-list-item"><strong>Data Engineering with APIs</strong>: Leveraged the OneMap API to creatively engineer distance-related features, such as calculating the exact proximity to the nearest MRT station for each flat.</li>
+            <li class="details-list-item"><strong>Model Optimization</strong>: Utilized hyperparameter grid search and various optimization techniques to enhance model accuracy.</li>
+            <li class="details-list-item"><strong>Model Evaluation</strong>: Systematically trained and evaluated multiple algorithms including Linear Regression, Support Vector Machines (SVM), Random Forests, and Neural Networks to identify the optimal predictive model.</li>
+          </ul>
+      </div>
+    
+                <a href="/files/BT4240_Group 2_Final Report.pdf" target="_blank" class="btn-tag">Report</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
+            <div class="project-img">
+              <img src="/images/H4G.png" alt="Hack4Good" />
+            </div>
+            <div class="project-body">
+              <h5>Hack4Good 2025</h5>
+              <div class="tech-tags">
+                <span>Vue.js</span><span>Firebase</span>
+              </div>
+              <p>Built a web-based minimart application allowing welfare home residents to purchase products using a secure digital voucher system.</p>
+              <div class="project-links">
+                
+      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
+      <div class="project-case-study-content" style="display: none;">
+        <h4 class="details-heading">The Problem</h4>
+          <p class="details-text">The Muhammadiyah Welfare Home needed a modernized, digital system to handle the distribution of products to its residents. Tracking inventory, managing resident allowances, and handling transactions manually is inefficient and prone to errors.</p>
+          
+          <h4 class="details-heading">The Solution</h4>
+          <p class="details-text">During the Hack4Good 2025 hackathon, I helped develop a web-based minimart application. This platform allows residents to securely purchase products using a digital voucher system, completely streamlining the home's internal economy.</p>
+
+          <h4 class="details-heading">Technical Implementation</h4>
+          <ul class="details-list">
+            <li class="details-list-item"><strong>Frontend Development</strong>: Built responsive and intuitive resident and administrator interfaces using Vue.js.</li>
+            <li class="details-list-item"><strong>Backend & Database</strong>: Integrated Firebase for real-time database management and secure user authentication.</li>
+            <li class="details-list-item"><strong>Digital Vouchers</strong>: Designed a secure logic flow for residents to redeem products against their allocated digital voucher balances.</li>
+          </ul>
+      </div>
+    
+                <a href="https://h4g-tft.web.app/" target="_blank" class="btn-tag">App</a>
+                <a href="https://github.com/weikiatt/Hack4Good" target="_blank" class="btn-tag">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
+            <div class="project-img">
+              <img src="/images/Orbital.png" alt="NUS Orbital" />
+            </div>
+            <div class="project-body">
+              <h5>NUS Orbital</h5>
+              <div class="tech-tags">
+                <span>C#</span><span>Azure</span><span>JavaScript</span>
+              </div>
+              <p>Developed a comprehensive, Azure-deployed student forum platform to foster collaborative learning and module discussions.</p>
+              <div class="project-links">
+                
+      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
+      <div class="project-case-study-content" style="display: none;">
+        <h4 class="details-heading">The Problem</h4>
+          <p class="details-text">University students often find information highly fragmented across different modules, courses, and informal chats. There is a need for an inclusive, centralized space where students can actively engage with peers, ask questions, and share knowledge related to their coursework.</p>
+          
+          <h4 class="details-heading">The Solution</h4>
+          <p class="details-text">As part of the School of Computing's self-driven programming summer experience, I developed a comprehensive student forum website. The platform is designed to foster collaborative learning, functioning similarly to Reddit or Piazza but tailored specifically for the NUS community.</p>
+
+          <h4 class="details-heading">Technology & Implementation</h4>
+          <ul class="details-list">
+            <li class="details-list-item"><strong>Full-Stack Development</strong>: Utilized C#, JavaScript, HTML, and CSS to build a responsive and dynamic forum interface.</li>
+            <li class="details-list-item"><strong>Cloud Deployment</strong>: Deployed the application using Microsoft Azure to ensure high availability and scalability for the student body.</li>
+            <li class="details-list-item"><strong>Machine Learning Integration</strong>: Addressed classification challenges within the forum content by training Logistic Regression, Random Forest, SVM, and GBT models, handling data imbalances with SMOTE and ENN.</li>
+          </ul>
+      </div>
+    
+                <a href="https://github.com/weikiatt/NUS-Orbital" target="_blank" class="btn-tag">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h3>Contact</h3>
+        </div>
+        <div class="contact-wrapper">
+          <h4 class="contact-title">Let's Connect</h4>
+          <p class="contact-text">I'm currently looking for new opportunities in data science, machine learning, and business analytics. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+          <a href="mailto:lolweikiat@gmail.com" class="btn-contact">Say Hello</a>
+        </div>
+      </div>
+    </section>
 
     <footer class="site-footer">
       <p>&copy; 2025 Lee Wei Kiat. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
-  
     <!-- PROJECT MODAL -->
     <div class="modal-overlay" id="project-modal">
       <div class="modal-content">
@@ -528,5 +721,6 @@
       </div>
     </div>
 
+    <script src="script.js"></script>
   </body>
 </html>
