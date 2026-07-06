@@ -47,6 +47,29 @@ body {
   transform: translateY(0);
 }
 
+@keyframes gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* =========================================
    NAVBAR
    ========================================= */
@@ -109,7 +132,9 @@ body {
    HERO
    ========================================= */
 .hero {
-  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 60%, #40916c 100%);
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 50%, #1b4332 100%);
+  background-size: 200% 200%;
+  animation: gradient-flow 15s ease infinite;
   padding: 5rem 2.5rem 6rem;
   position: relative;
   overflow: hidden;
@@ -142,7 +167,9 @@ body {
   color: var(--mint);
   text-transform: uppercase;
   margin-bottom: 1rem;
-  opacity: 0.9;
+  opacity: 0;
+  animation: slide-in-up 0.8s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .hero-name {
@@ -151,6 +178,9 @@ body {
   color: white;
   line-height: 1.15;
   margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: slide-in-up 0.8s ease forwards;
+  animation-delay: 0.4s;
 }
 
 .hero-bio {
@@ -159,6 +189,9 @@ body {
   max-width: 540px;
   line-height: 1.85;
   font-weight: 300;
+  opacity: 0;
+  animation: slide-in-up 0.8s ease forwards;
+  animation-delay: 0.6s;
 }
 
 .hero-links {
@@ -166,6 +199,9 @@ body {
   flex-wrap: wrap;
   gap: 0.6rem;
   margin-top: 2rem;
+  opacity: 0;
+  animation: slide-in-up 0.8s ease forwards;
+  animation-delay: 0.8s;
 }
 
 .hero-btn {
@@ -203,6 +239,8 @@ body {
   object-position: center top;
   border: 4px solid rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  animation: slide-in-up 0.8s ease forwards, float 6s ease-in-out infinite 0.8s;
 }
 
 /* =========================================
@@ -377,6 +415,63 @@ body {
 }
 
 /* =========================================
+   SKILLS
+   ========================================= */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-category {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #edf2ee;
+  border-top: 4px solid var(--accent-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-category:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-category h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-item {
+  font-size: 0.8rem;
+  background: var(--bg-alt);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.skill-item:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* =========================================
    PROJECTS
    ========================================= */
 .projects-grid {
@@ -513,7 +608,7 @@ body {
 .btn-case-study:hover {
   background: var(--primary);
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
   box-shadow: 0 6px 15px rgba(27, 67, 50, 0.4);
 }
 
@@ -561,7 +656,7 @@ body {
 .btn-contact:hover {
   background: var(--primary);
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.02);
   box-shadow: 0 10px 25px rgba(27, 67, 50, 0.5);
 }
 
@@ -697,3 +792,8 @@ body {
     padding: 0 1.25rem;
   }
 }
+
+/* =========================================
+   MODAL
+   ========================================= */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; padding: 1.5rem; } .modal-overlay.active { opacity: 1; visibility: visible; } .modal-content { background: var(--surface); border-radius: var(--radius); width: 100%; max-width: 700px; max-height: 90vh; overflow-y: auto; position: relative; transform: translateY(20px) scale(0.95); transition: transform 0.3s ease; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); padding: 2.5rem; } .modal-overlay.active .modal-content { transform: translateY(0) scale(1); } .modal-close { position: absolute; top: 1.25rem; right: 1.25rem; background: var(--bg-alt); border: none; font-size: 1.5rem; color: var(--text-muted); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; } .modal-close:hover { background: #ffe5e5; color: #d90429; } .modal-header { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); } .modal-header h3 { font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.75rem; } .modal-body .details-heading { color: var(--primary); margin-bottom: 1rem; font-size: 1.15rem; } .modal-body .details-text { margin-bottom: 2rem; color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; } .modal-body .details-list { margin-bottom: 2rem; color: var(--text-muted); line-height: 1.8; padding-left: 1.5rem; font-size: 0.95rem; } .modal-body .details-list-item { margin-bottom: 0.5rem; }
