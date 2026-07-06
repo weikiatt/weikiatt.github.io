@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Lee Wei Kiat</title>
   </head>
@@ -135,48 +136,48 @@
           <div class="skill-category">
             <h5>Programming Languages</h5>
             <div class="skill-list">
-              <span class="skill-item">Python</span>
-              <span class="skill-item">SQL</span>
-              <span class="skill-item">R</span>
-              <span class="skill-item">JavaScript</span>
-              <span class="skill-item">C#</span>
-              <span class="skill-item">HTML/CSS</span>
+              <span class="skill-item"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="skill-item"><i class="fa-solid fa-database"></i> SQL</span>
+              <span class="skill-item"><i class="fa-brands fa-r-project"></i> R</span>
+              <span class="skill-item"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="skill-item"><i class="fa-brands fa-microsoft"></i> C#</span>
+              <span class="skill-item"><i class="fa-brands fa-html5"></i> HTML/CSS</span>
             </div>
           </div>
 
           <div class="skill-category">
             <h5>Machine Learning & AI</h5>
             <div class="skill-list">
-              <span class="skill-item">Predictive Modeling</span>
-              <span class="skill-item">Deep Learning</span>
-              <span class="skill-item">NLP</span>
-              <span class="skill-item">Scikit-learn</span>
-              <span class="skill-item">PyTorch</span>
-              <span class="skill-item">LangGraph</span>
-              <span class="skill-item">Ollama</span>
+              <span class="skill-item"><i class="fa-solid fa-chart-line"></i> Predictive Modeling</span>
+              <span class="skill-item"><i class="fa-solid fa-brain"></i> Deep Learning</span>
+              <span class="skill-item"><i class="fa-solid fa-language"></i> NLP</span>
+              <span class="skill-item"><i class="fa-solid fa-code-branch"></i> Scikit-learn</span>
+              <span class="skill-item"><i class="fa-solid fa-fire"></i> PyTorch</span>
+              <span class="skill-item"><i class="fa-solid fa-diagram-project"></i> LangGraph</span>
+              <span class="skill-item"><i class="fa-solid fa-robot"></i> Ollama</span>
             </div>
           </div>
 
           <div class="skill-category">
             <h5>Data & Analytics</h5>
             <div class="skill-list">
-              <span class="skill-item">Tableau</span>
-              <span class="skill-item">PySpark</span>
-              <span class="skill-item">Databricks</span>
-              <span class="skill-item">Pandas / NumPy</span>
-              <span class="skill-item">Data Visualization</span>
+              <span class="skill-item"><i class="fa-solid fa-chart-pie"></i> Tableau</span>
+              <span class="skill-item"><i class="fa-solid fa-bolt"></i> PySpark</span>
+              <span class="skill-item"><i class="fa-solid fa-cubes"></i> Databricks</span>
+              <span class="skill-item"><i class="fa-solid fa-table"></i> Pandas / NumPy</span>
+              <span class="skill-item"><i class="fa-solid fa-chart-bar"></i> Data Visualization</span>
             </div>
           </div>
 
           <div class="skill-category">
             <h5>Tools & Frameworks</h5>
             <div class="skill-list">
-              <span class="skill-item">Git</span>
-              <span class="skill-item">Azure</span>
-              <span class="skill-item">Firebase</span>
-              <span class="skill-item">Vue.js</span>
-              <span class="skill-item">Databases</span>
-              <span class="skill-item">SharePoint</span>
+              <span class="skill-item"><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span class="skill-item"><i class="fa-brands fa-microsoft"></i> Azure</span>
+              <span class="skill-item"><i class="fa-solid fa-fire-flame-curved"></i> Firebase</span>
+              <span class="skill-item"><i class="fa-brands fa-vuejs"></i> Vue.js</span>
+              <span class="skill-item"><i class="fa-solid fa-server"></i> Databases</span>
+              <span class="skill-item"><i class="fa-brands fa-microsoft"></i> SharePoint</span>
             </div>
           </div>
         </div>
@@ -266,24 +267,25 @@
             <div class="project-body">
               <h5>Healthcare Capstone Project</h5>
               <div class="tech-tags">
-                <span>LangGraph</span><span>Ollama</span><span>SQL</span><span>Multi-Agent</span>
+                <span>LangGraph</span><span>Ollama</span><span>SQL</span><span>Multi-Agent</span><span>DuckDB</span>
               </div>
               <p>Architected an offline, multi-agent LangGraph system to enable clinicians to query OMOP CDM healthcare data using natural language safely.</p>
               <div class="project-links">
                 
       <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
       <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
-          <p class="details-text">Clinicians often need to extract insights from complex healthcare databases like OMOP CDM, but doing so requires writing complex SQL queries, which is a specialized technical skill. Furthermore, any automated solution must strictly adhere to data privacy laws and clinical safety standards, meaning patient data cannot leave secure environments, and AI-generated results cannot be blindly trusted.</p>
+        <h4 class="details-heading"><i class="fa-solid fa-circle-exclamation" style="margin-right: 6px; color: var(--accent);"></i> The Problem</h4>
+          <p class="details-text">Clinical experts often face significant delays when trying to validate medical hypotheses because they rely heavily on specialized data engineers to query and extract information from complex, highly-regulated healthcare databases. The objective was to bridge the gap between clinical expertise and data science by building an intelligent copilot that allows medical professionals to query complex datasets directly using natural language.</p>
           
-          <h4 class="details-heading">The Solution</h4>
-          <p class="details-text">I architected a secure LangGraph multi-agent system that runs entirely offline via Ollama. This ensures that no sensitive patient data ever leaves the local environment. The system translates natural language queries from clinicians into dynamic SQL queries to retrieve data from the OMOP CDM.</p>
+          <h4 class="details-heading"><i class="fa-solid fa-lightbulb" style="margin-right: 6px; color: var(--accent);"></i> The Solution</h4>
+          <p class="details-text">Engineered a multi-agent AI workflow using LangGraph and DuckDB. The system uses ClinicalBERT and FAISS to ground medical terminology to actual database schemas, dynamically generating accurate SQL queries while enforcing strict Human-In-The-Loop (HITL) checkpoints. This created an auditable, transparent analytics assistant that empowers clinicians to rapidly explore health data securely.</p>
 
-          <h4 class="details-heading">Key Features & Outcomes</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-star" style="margin-right: 6px; color: var(--accent);"></i> The Multi-Agent Workflow</h4>
           <ul class="details-list">
-            <li class="details-list-item"><strong>Natural Language to SQL</strong>: Specialized AI agents dynamically generate SQL to retrieve the necessary data.</li>
-            <li class="details-list-item"><strong>Automated Statistical Analysis</strong>: The retrieved data is automatically analyzed, streamlining the research process.</li>
-            <li class="details-list-item"><strong>Human-in-the-Loop (HITL) Workflow</strong>: Designed with auditability in mind, the system requires clinician validation at three review checkpoints using LangGraph interrupts, ensuring that AI outputs are reviewed before delivering final results.</li>
+            <li class="details-list-item"><strong>Intent & Routing</strong>: Classifies the analytical type (cohort counting, trends, etc.). An Intent Clarifier detects underspecified questions and asks the user for clarification before forcing a query.</li>
+            <li class="details-list-item"><strong>Schema Grounding</strong>: Maps natural-language concepts to known tables, fields, and controlled vocabularies using FAISS and ClinicalBERT, preventing the AI from hallucinating invalid medical columns.</li>
+            <li class="details-list-item"><strong>SQL Generation (DuckDB)</strong>: A dedicated SQL agent receives dynamic schema pruning to generate explainable DuckDB SQL, drastically reducing prompt clutter and errors.</li>
+            <li class="details-list-item"><strong>Human-In-The-Loop Checkpoints</strong>: Positions the assistant as a copilot. Intermediate artifacts (query plans, generated SQL) are stored in a Data Registry for human review and auditing before sensitive analytical steps.</li>
           </ul>
       </div>
     
@@ -298,24 +300,25 @@
             <div class="project-body">
               <h5>Judicial Analytics</h5>
               <div class="tech-tags">
-                <span>Deep Learning</span><span>GPT Pipeline</span><span>HAN</span>
+                <span>GPT Pipeline</span><span>LegalBERT</span><span>HAN</span><span>PyTorch</span>
               </div>
               <p>Developed a deep learning pipeline utilizing a Hierarchical Attention Network and SwiGLU to predict defendant liability from unstructured legal documents.</p>
               <div class="project-links">
                 
       <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
       <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
-          <p class="details-text">Predicting defendant liability in Singapore corporate litigation is incredibly complex due to multi-level legal nuances, extensive case documentation, and the subjective nature of judicial decision-making. Legal professionals spend countless hours analyzing PDFs of past case law.</p>
+        <h4 class="details-heading"><i class="fa-solid fa-circle-exclamation" style="margin-right: 6px; color: var(--accent);"></i> The Problem</h4>
+          <p class="details-text">Standard text analytics models fail on legal texts due to dense terminology, rigid structures, and the high risk of "data leakage"—where models artificially inflate performance by reading outcome clues hidden within the judgment. The objective was to architect a specialized NLP pipeline capable of accurately extracting, processing, and analyzing complex judicial rulings without relying on post-decision factual material.</p>
           
-          <h4 class="details-heading">The Solution</h4>
-          <p class="details-text">I developed a deep learning pipeline to predict defendant liability based on unstructured legal documents. By transforming dense legal text into structured data and feeding it into an advanced neural network architecture, the system provides an objective, data-driven assessment of litigation outcomes.</p>
+          <h4 class="details-heading"><i class="fa-solid fa-lightbulb" style="margin-right: 6px; color: var(--accent);"></i> The Solution</h4>
+          <p class="details-text">I developed a custom hierarchical architecture using PyTorch, LegalBERT, and XGBoost, implementing rigorous data leakage controls (such as temporal isolation and IRAC-inspired extraction) to strictly separate pre-decision facts from final judicial conclusions. This delivered a scalable, robust framework for data-driven legal analytics that prevents artificial outcome inflation.</p>
 
-          <h4 class="details-heading">Key Features & Architecture</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-star" style="margin-right: 6px; color: var(--accent);"></i> Pipeline Design & Architecture</h4>
           <ul class="details-list">
-            <li class="details-list-item"><strong>3-Stage GPT Pipeline</strong>: Engineered a robust pipeline to process raw PDF documents into ML-ready JSON using an LLM-as-a-Judge methodology for high-fidelity data extraction.</li>
-            <li class="details-list-item"><strong>Hierarchical Attention Network (HAN)</strong>: Built a custom HAN to effectively capture multi-level legal nuances from the document text.</li>
-            <li class="details-list-item"><strong>SwiGLU Activation</strong>: Enhanced the network's predictive capability and training stability by implementing the SwiGLU activation function.</li>
+            <li class="details-list-item"><strong>Leakage Controls</strong>: Implemented strict temporal isolation, separate counterclaim handling, and metric realignment to ensure models learn only from pre-outcome information.</li>
+            <li class="details-list-item"><strong>IRAC-Inspired Extraction</strong>: Structured facts, issues, and rules separately before final conclusions, utilizing LLM-as-a-Judge QA to ensure high-fidelity JSON data extraction.</li>
+            <li class="details-list-item"><strong>Hierarchical Attention Network (HAN)</strong>: Built a custom HAN to hierarchically encode legal text, preserving the separation between fact-level events and case-level representation.</li>
+            <li class="details-list-item"><strong>Case-Level Aggregation</strong>: Converted party-level predictions into lawsuit-level signals aligned with practical legal-risk decisions, evaluated against XGBoost and LegalBERT baselines.</li>
           </ul>
       </div>
     
@@ -325,7 +328,7 @@
 
           <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
             <div class="project-img">
-              <img src="/images/Lending Money.jpeg" alt="Loan Default Prediction" />
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" alt="Loan Default Prediction" />
             </div>
             <div class="project-body">
               <h5>Predicting Loan Defaults</h5>
@@ -337,13 +340,13 @@
                 
       <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
       <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
+        <h4 class="details-heading"><i class="fa-solid fa-circle-exclamation" style="margin-right: 6px; color: var(--accent);"></i> The Problem</h4>
           <p class="details-text">Financial institutions face significant risk from loan defaults. Accurately predicting potential defaulters allows for better risk management and resource allocation. However, historical loan datasets are often massive, highly imbalanced (most people do not default), and feature-rich, requiring sophisticated preprocessing and modeling.</p>
           
-          <h4 class="details-heading">The Solution</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-lightbulb" style="margin-right: 6px; color: var(--accent);"></i> The Solution</h4>
           <p class="details-text">I built and evaluated several machine learning models prioritizing a high recall rate to detect potential defaulters using LendingClub's extensive dataset spanning from 2007 to 2020 (comprising 2.9 million loan records).</p>
 
-          <h4 class="details-heading">Key Details & Methodologies</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-star" style="margin-right: 6px; color: var(--accent);"></i> Key Details & Methodologies</h4>
           <ul class="details-list">
             <li class="details-list-item"><strong>Big Data Processing</strong>: Leveraged PySpark to handle and process the 2.9 million records efficiently.</li>
             <li class="details-list-item"><strong>Feature Engineering & PCA</strong>: Cleaned the data and reduced dimensionality from 83 features down to 62 key components using Principal Component Analysis (PCA).</li>
@@ -372,13 +375,13 @@
                 
       <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
       <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
+        <h4 class="details-heading"><i class="fa-solid fa-circle-exclamation" style="margin-right: 6px; color: var(--accent);"></i> The Problem</h4>
           <p class="details-text">Shoppers often struggle to find the best deals for groceries across different supermarket chains. Price comparison is a tedious, manual process, making it difficult for consumers to consistently save money on their regular shopping lists.</p>
           
-          <h4 class="details-heading">The Solution</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-lightbulb" style="margin-right: 6px; color: var(--accent);"></i> The Solution</h4>
           <p class="details-text">I contributed to the development of "The Fair Tracker", a web-based, centralized platform that provides transparent price comparisons across multiple supermarkets, aimed at streamlining the shopping experience for deal-seekers.</p>
 
-          <h4 class="details-heading">Platform Features</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-star" style="margin-right: 6px; color: var(--accent);"></i> Platform Features</h4>
           <ul class="details-list">
             <li class="details-list-item"><strong>Real-time Price Comparison</strong>: Compare prices of grocery items across major supermarket chains instantly.</li>
             <li class="details-list-item"><strong>Grocery List Tracking</strong>: Users can create, save, and manage custom grocery lists to calculate total costs before visiting the store.</li>
@@ -393,7 +396,7 @@
 
           <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
             <div class="project-img">
-              <img src="/images/HDB.jpg" alt="HDB Flat Prices" />
+              <img src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&q=80&w=800" alt="HDB Flat Prices" />
             </div>
             <div class="project-body">
               <h5>Predicting HDB Flat Prices</h5>
@@ -405,13 +408,13 @@
                 
       <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
       <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
+        <h4 class="details-heading"><i class="fa-solid fa-circle-exclamation" style="margin-right: 6px; color: var(--accent);"></i> The Problem</h4>
           <p class="details-text">Navigating the Singapore public housing market is challenging for both buyers and sellers. Determining a fair resale price involves considering a multitude of variables including flat characteristics, location, and proximity to crucial amenities.</p>
           
-          <h4 class="details-heading">The Solution</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-lightbulb" style="margin-right: 6px; color: var(--accent);"></i> The Solution</h4>
           <p class="details-text">I developed a predictive model to estimate HDB resale flat prices accurately. By utilizing neighborhood and amenity information alongside core flat attributes, the model provides actionable pricing insights to empower stakeholders in the housing market.</p>
 
-          <h4 class="details-heading">Methodology & Tech Stack</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-star" style="margin-right: 6px; color: var(--accent);"></i> Methodology & Tech Stack</h4>
           <ul class="details-list">
             <li class="details-list-item"><strong>Data Engineering with APIs</strong>: Leveraged the OneMap API to creatively engineer distance-related features, such as calculating the exact proximity to the nearest MRT station for each flat.</li>
             <li class="details-list-item"><strong>Model Optimization</strong>: Utilized hyperparameter grid search and various optimization techniques to enhance model accuracy.</li>
@@ -438,13 +441,13 @@
                 
       <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
       <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
+        <h4 class="details-heading"><i class="fa-solid fa-circle-exclamation" style="margin-right: 6px; color: var(--accent);"></i> The Problem</h4>
           <p class="details-text">The Muhammadiyah Welfare Home needed a modernized, digital system to handle the distribution of products to its residents. Tracking inventory, managing resident allowances, and handling transactions manually is inefficient and prone to errors.</p>
           
-          <h4 class="details-heading">The Solution</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-lightbulb" style="margin-right: 6px; color: var(--accent);"></i> The Solution</h4>
           <p class="details-text">During the Hack4Good 2025 hackathon, I helped develop a web-based minimart application. This platform allows residents to securely purchase products using a digital voucher system, completely streamlining the home's internal economy.</p>
 
-          <h4 class="details-heading">Technical Implementation</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-star" style="margin-right: 6px; color: var(--accent);"></i> Technical Implementation</h4>
           <ul class="details-list">
             <li class="details-list-item"><strong>Frontend Development</strong>: Built responsive and intuitive resident and administrator interfaces using Vue.js.</li>
             <li class="details-list-item"><strong>Backend & Database</strong>: Integrated Firebase for real-time database management and secure user authentication.</li>
@@ -472,212 +475,16 @@
                 
       <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
       <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
+        <h4 class="details-heading"><i class="fa-solid fa-circle-exclamation" style="margin-right: 6px; color: var(--accent);"></i> The Problem</h4>
           <p class="details-text">University students often find information highly fragmented across different modules, courses, and informal chats. There is a need for an inclusive, centralized space where students can actively engage with peers, ask questions, and share knowledge related to their coursework.</p>
           
-          <h4 class="details-heading">The Solution</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-lightbulb" style="margin-right: 6px; color: var(--accent);"></i> The Solution</h4>
           <p class="details-text">As part of the School of Computing's self-driven programming summer experience, I developed a comprehensive student forum website. The platform is designed to foster collaborative learning, functioning similarly to Reddit or Piazza but tailored specifically for the NUS community.</p>
 
-          <h4 class="details-heading">Technology & Implementation</h4>
+          <h4 class="details-heading"><i class="fa-solid fa-star" style="margin-right: 6px; color: var(--accent);"></i> Technology & Implementation</h4>
           <ul class="details-list">
             <li class="details-list-item"><strong>Full-Stack Development</strong>: Utilized C#, JavaScript, HTML, and CSS to build a responsive and dynamic forum interface.</li>
             <li class="details-list-item"><strong>Cloud Deployment</strong>: Deployed the application using Microsoft Azure to ensure high availability and scalability for the student body.</li>
-            <li class="details-list-item"><strong>Machine Learning Integration</strong>: Addressed classification challenges within the forum content by training Logistic Regression, Random Forest, SVM, and GBT models, handling data imbalances with SMOTE and ENN.</li>
-          </ul>
-      </div>
-    
-                <a href="https://github.com/weikiatt/NUS-Orbital" target="_blank" class="btn-tag">GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <h3>Contact</h3>
-        </div>
-        <div class="contact-wrapper">
-          <h4 class="contact-title">Let's Connect</h4>
-          <p class="contact-text">I'm currently looking for new opportunities in data science, machine learning, and business analytics. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-          <a href="mailto:lolweikiat@gmail.com" class="btn-contact">Say Hello</a>
-        </div>
-      </div>
-    </section>
-          <ul class="details-list">
-            <li class="details-list-item"><strong>3-Stage GPT Pipeline</strong>: Engineered a robust pipeline to process raw PDF documents into ML-ready JSON using an LLM-as-a-Judge methodology for high-fidelity data extraction.</li>
-            <li class="details-list-item"><strong>Hierarchical Attention Network (HAN)</strong>: Built a custom HAN to effectively capture multi-level legal nuances from the document text.</li>
-            <li class="details-list-item"><strong>SwiGLU Activation</strong>: Enhanced the network's predictive capability and training stability by implementing the SwiGLU activation function.</li>
-          </ul>
-      </div>
-    
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
-            <div class="project-img">
-              <img src="/images/Lending Money.jpeg" alt="Loan Default Prediction" />
-            </div>
-            <div class="project-body">
-              <h5>Predicting Loan Defaults</h5>
-              <div class="tech-tags">
-                <span>PySpark</span><span>Machine Learning</span><span>PCA</span>
-              </div>
-              <p>Built high-recall ML models to detect potential defaulters using 2.9M LendingClub records, utilizing PySpark and handling class imbalance.</p>
-              <div class="project-links">
-                
-      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
-      <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
-          <p class="details-text">Financial institutions face significant risk from loan defaults. Accurately predicting potential defaulters allows for better risk management and resource allocation. However, historical loan datasets are often massive, highly imbalanced (most people do not default), and feature-rich, requiring sophisticated preprocessing and modeling.</p>
-          
-          <h4 class="details-heading">The Solution</h4>
-          <p class="details-text">I built and evaluated several machine learning models prioritizing a high recall rate to detect potential defaulters using LendingClub's extensive dataset spanning from 2007 to 2020 (comprising 2.9 million loan records).</p>
-
-          <h4 class="details-heading">Key Details & Methodologies</h4>
-          <ul class="details-list">
-            <li class="details-list-item"><strong>Big Data Processing</strong>: Leveraged PySpark to handle and process the 2.9 million records efficiently.</li>
-            <li class="details-list-item"><strong>Feature Engineering & PCA</strong>: Cleaned the data and reduced dimensionality from 83 features down to 62 key components using Principal Component Analysis (PCA).</li>
-            <li class="details-list-item"><strong>Handling Class Imbalance</strong>: Implemented SMOTE (Synthetic Minority Over-sampling Technique) and ENN (Edited Nearest Neighbours) to balance the target classes for better model training.</li>
-            <li class="details-list-item"><strong>Model Evaluation</strong>: Trained and compared 6 different models including Logistic Regression, Random Forest, SVM, and Gradient Boosted Trees. Random Forest was selected as the best performer, achieving a recall of 0.8261 and a PR_AUC of 0.1890.</li>
-          </ul>
-      </div>
-    
-                <a href="https://colab.research.google.com/drive/1pbE32PM_jfiptyG8gnwUA_1Gnuv983aK?usp=sharing" class="btn-tag" target="_blank">Code</a>
-                <a href="files/BT4221_Group2_Final_Project_Report.pdf" target="_blank" class="btn-tag">Report</a>
-              </div>
-            </div>
-          </div>
-
-           <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
-            <div class="project-img">
-              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800" alt="The Fair Tracker" />
-            </div>
-            <div class="project-body">
-              <h5>The Fair Tracker</h5>
-              <div class="tech-tags">
-                <span>Web App</span><span>UI/UX</span>
-              </div>
-              <p>A web-based centralized platform offering real-time grocery price comparisons, list tracking, and a store locator for shoppers.</p>
-              <div class="project-links">
-                
-      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
-      <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
-          <p class="details-text">Shoppers often struggle to find the best deals for groceries across different supermarket chains. Price comparison is a tedious, manual process, making it difficult for consumers to consistently save money on their regular shopping lists.</p>
-          
-          <h4 class="details-heading">The Solution</h4>
-          <p class="details-text">I contributed to the development of "The Fair Tracker", a web-based, centralized platform that provides transparent price comparisons across multiple supermarkets, aimed at streamlining the shopping experience for deal-seekers.</p>
-
-          <h4 class="details-heading">Platform Features</h4>
-          <ul class="details-list">
-            <li class="details-list-item"><strong>Real-time Price Comparison</strong>: Compare prices of grocery items across major supermarket chains instantly.</li>
-            <li class="details-list-item"><strong>Grocery List Tracking</strong>: Users can create, save, and manage custom grocery lists to calculate total costs before visiting the store.</li>
-            <li class="details-list-item"><strong>Favourites Function</strong>: Bookmark frequently bought items for quick price checking.</li>
-            <li class="details-list-item"><strong>Store Locator</strong>: Integrated map feature to find the nearest supermarket branch carrying the required items at the best price.</li>
-          </ul>
-      </div>
-    
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
-            <div class="project-img">
-              <img src="/images/HDB.jpg" alt="HDB Flat Prices" />
-            </div>
-            <div class="project-body">
-              <h5>Predicting HDB Flat Prices</h5>
-              <div class="tech-tags">
-                <span>Predictive Modeling</span><span>OneMap API</span>
-              </div>
-              <p>Developed an accurate predictive model utilizing neighborhood amenities and OneMap API features to estimate HDB resale flat prices.</p>
-              <div class="project-links">
-                
-      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
-      <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
-          <p class="details-text">Navigating the Singapore public housing market is challenging for both buyers and sellers. Determining a fair resale price involves considering a multitude of variables including flat characteristics, location, and proximity to crucial amenities.</p>
-          
-          <h4 class="details-heading">The Solution</h4>
-          <p class="details-text">I developed a predictive model to estimate HDB resale flat prices accurately. By utilizing neighborhood and amenity information alongside core flat attributes, the model provides actionable pricing insights to empower stakeholders in the housing market.</p>
-
-          <h4 class="details-heading">Methodology & Tech Stack</h4>
-          <ul class="details-list">
-            <li class="details-list-item"><strong>Data Engineering with APIs</strong>: Leveraged the OneMap API to creatively engineer distance-related features, such as calculating the exact proximity to the nearest MRT station for each flat.</li>
-            <li class="details-list-item"><strong>Model Optimization</strong>: Utilized hyperparameter grid search and various optimization techniques to enhance model accuracy.</li>
-            <li class="details-list-item"><strong>Model Evaluation</strong>: Systematically trained and evaluated multiple algorithms including Linear Regression, Support Vector Machines (SVM), Random Forests, and Neural Networks to identify the optimal predictive model.</li>
-          </ul>
-      </div>
-    
-                <a href="/files/BT4240_Group 2_Final Report.pdf" target="_blank" class="btn-tag">Report</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
-            <div class="project-img">
-              <img src="/images/H4G.png" alt="Hack4Good" />
-            </div>
-            <div class="project-body">
-              <h5>Hack4Good 2025</h5>
-              <div class="tech-tags">
-                <span>Vue.js</span><span>Firebase</span>
-              </div>
-              <p>Built a web-based minimart application allowing welfare home residents to purchase products using a secure digital voucher system.</p>
-              <div class="project-links">
-                
-      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
-      <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
-          <p class="details-text">The Muhammadiyah Welfare Home needed a modernized, digital system to handle the distribution of products to its residents. Tracking inventory, managing resident allowances, and handling transactions manually is inefficient and prone to errors.</p>
-          
-          <h4 class="details-heading">The Solution</h4>
-          <p class="details-text">During the Hack4Good 2025 hackathon, I helped develop a web-based minimart application. This platform allows residents to securely purchase products using a digital voucher system, completely streamlining the home's internal economy.</p>
-
-          <h4 class="details-heading">Technical Implementation</h4>
-          <ul class="details-list">
-            <li class="details-list-item"><strong>Frontend Development</strong>: Built responsive and intuitive resident and administrator interfaces using Vue.js.</li>
-            <li class="details-list-item"><strong>Backend & Database</strong>: Integrated Firebase for real-time database management and secure user authentication.</li>
-            <li class="details-list-item"><strong>Digital Vouchers</strong>: Designed a secure logic flow for residents to redeem products against their allocated digital voucher balances.</li>
-          </ul>
-      </div>
-    
-                <a href="https://h4g-tft.web.app/" target="_blank" class="btn-tag">App</a>
-                <a href="https://github.com/weikiatt/Hack4Good" target="_blank" class="btn-tag">GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" style="cursor: pointer;" onclick="openProjectModal(event, this)">
-            <div class="project-img">
-              <img src="/images/Orbital.png" alt="NUS Orbital" />
-            </div>
-            <div class="project-body">
-              <h5>NUS Orbital</h5>
-              <div class="tech-tags">
-                <span>C#</span><span>Azure</span><span>JavaScript</span>
-              </div>
-              <p>Developed a comprehensive, Azure-deployed student forum platform to foster collaborative learning and module discussions.</p>
-              <div class="project-links">
-                
-      <span class="btn-tag" style="background: transparent; color: var(--accent); border: none; padding-left: 0; font-weight: 700;">View Case Study &rarr;</span>
-      <div class="project-case-study-content" style="display: none;">
-        <h4 class="details-heading">The Problem</h4>
-          <p class="details-text">University students often find information highly fragmented across different modules, courses, and informal chats. There is a need for an inclusive, centralized space where students can actively engage with peers, ask questions, and share knowledge related to their coursework.</p>
-          
-          <h4 class="details-heading">The Solution</h4>
-          <p class="details-text">As part of the School of Computing's self-driven programming summer experience, I developed a comprehensive student forum website. The platform is designed to foster collaborative learning, functioning similarly to Reddit or Piazza but tailored specifically for the NUS community.</p>
-
-          <h4 class="details-heading">Technology & Implementation</h4>
-          <ul class="details-list">
-            <li class="details-list-item"><strong>Full-Stack Development</strong>: Utilized C#, JavaScript, HTML, and CSS to build a responsive and dynamic forum interface.</li>
-            <li class="details-list-item"><strong>Cloud Deployment</strong>: Deployed the application using Microsoft Azure to ensure high availability and scalability for the student body.</li>
-            <li class="details-list-item"><strong>Machine Learning Integration</strong>: Addressed classification challenges within the forum content by training Logistic Regression, Random Forest, SVM, and GBT models, handling data imbalances with SMOTE and ENN.</li>
           </ul>
       </div>
     
