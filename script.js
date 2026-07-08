@@ -48,7 +48,7 @@ const observer = new IntersectionObserver(
 
 const viewportHeight = window.innerHeight;
 
-document.querySelectorAll(".timeline-item, .project-card, .section-header, .skill-category").forEach((el, i) => {
+document.querySelectorAll(".timeline-item, .project-card, .section-header, .skill-category, .project-card-modern").forEach((el, i) => {
   const rect = el.getBoundingClientRect();
   // Only animate elements that start below the fold
   if (rect.top > viewportHeight) {
@@ -58,36 +58,3 @@ document.querySelectorAll(".timeline-item, .project-card, .section-header, .skil
   }
 });
 
-// Modal Logic
-const modal = document.getElementById('project-modal');
-const modalClose = document.getElementById('modal-close');
-const modalTitle = document.getElementById('modal-title');
-const modalTags = document.getElementById('modal-tags');
-const modalBody = document.getElementById('modal-body');
-
-function openProjectModal(event, cardElement) {
-  if (event.target.tagName.toLowerCase() === 'a' || event.target.closest('a')) {
-    return;
-  }
-  const title = cardElement.querySelector('h5').innerText;
-  const tagsHtml = cardElement.querySelector('.tech-tags').innerHTML;
-  const contentElement = cardElement.querySelector('.project-case-study-content');
-  const contentHtml = contentElement ? contentElement.innerHTML : '';
-  modalTitle.innerText = title;
-  modalTags.innerHTML = tagsHtml;
-  modalBody.innerHTML = contentHtml;
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-modalClose.addEventListener('click', () => {
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
-});
-
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-});
