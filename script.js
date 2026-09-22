@@ -3,8 +3,10 @@ const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navbar-links");
 
 hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+  const menuIsOpen = navLinks.classList.toggle("active");
   hamburger.classList.toggle("active");
+  hamburger.setAttribute("aria-expanded", String(menuIsOpen));
+  hamburger.setAttribute("aria-label", menuIsOpen ? "Close navigation menu" : "Open navigation menu");
 });
 
 // Close menu when a link is clicked (mobile)
@@ -12,6 +14,8 @@ navLinks.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("active");
     hamburger.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.setAttribute("aria-label", "Open navigation menu");
   });
 });
 
