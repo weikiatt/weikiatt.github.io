@@ -62,3 +62,58 @@ document.querySelectorAll(".timeline-item, .project-card, .section-header, .skil
   }
 });
 
+// Project filters use the categories already represented by each project's stack and description.
+const filterButtons = document.querySelectorAll(".filter-button");
+const projectCards = document.querySelectorAll(".project-card-modern[data-category]");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+
+    filterButtons.forEach((item) => {
+      const isSelected = item === button;
+      item.classList.toggle("is-active", isSelected);
+      item.setAttribute("aria-pressed", String(isSelected));
+    });
+
+    projectCards.forEach((card) => {
+      const isMatch = filter === "all" || card.dataset.category.split(" ").includes(filter);
+      card.classList.toggle("is-filtered-out", !isMatch);
+    });
+  });
+});
+
+// A small progress signal makes long portfolio pages easier to navigate.
+const progressBar = document.querySelector(".scroll-progress span");
+const updateProgress = () => {
+  if (!progressBar) return;
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+  progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+};
+
+window.addEventListener("scroll", updateProgress, { passive: true });
+updateProgress();
+
+// Mark the section currently in view in the home-page navigation.
+const sectionLinks = [...document.querySelectorAll('.navbar-links a[href^="#"]')];
+const observedSections = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+if (observedSections.length) {
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        sectionLinks.forEach((link) => {
+          link.classList.toggle("is-current", link.getAttribute("href") === `#${entry.target.id}`);
+        });
+      });
+    },
+    { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
+  );
+
+  observedSections.forEach((section) => navObserver.observe(section));
+}
+

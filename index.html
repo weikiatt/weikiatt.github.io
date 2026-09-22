@@ -11,8 +11,9 @@
     <meta name="description" content="Portfolio of Lee Wei Kiat, a Business Analytics undergraduate at the National University of Singapore." />
     <title>Lee Wei Kiat | Business Analytics Portfolio</title>
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <nav class="custom-navbar">
       <a class="navbar-brand" href="#about" aria-label="Lee Wei Kiat — back to top">LEE WEI KIAT</a>
       <ul class="navbar-links" id="navbar-links">
@@ -341,10 +342,17 @@
           <h3>Projects</h3>
         </div>
 
+        <div class="project-filters" aria-label="Filter projects">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All work</button>
+          <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI &amp; ML</button>
+          <button class="filter-button" type="button" data-filter="analytics" aria-pressed="false">Analytics</button>
+          <button class="filter-button" type="button" data-filter="app" aria-pressed="false">Apps</button>
+        </div>
+
         <div class="projects-grid-modern">
           
           <!-- Healthcare -->
-          <div class="project-card-modern">
+          <div class="project-card-modern" data-category="ai analytics">
             <div class="card-image">
               <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" alt="Healthcare analytics" loading="lazy" />
             </div>
@@ -362,7 +370,7 @@
           </div>
 
           <!-- Judicial -->
-          <div class="project-card-modern">
+          <div class="project-card-modern" data-category="ai analytics">
             <div class="card-image">
               <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800" alt="Judicial analytics" loading="lazy" />
             </div>
@@ -380,7 +388,7 @@
           </div>
 
           <!-- Loan -->
-          <div class="project-card-modern">
+          <div class="project-card-modern" data-category="ai analytics">
             <div class="card-image">
               <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" alt="Loan default prediction" loading="lazy" />
             </div>
@@ -398,7 +406,7 @@
           </div>
 
           <!-- TFT -->
-          <div class="project-card-modern">
+          <div class="project-card-modern" data-category="app">
             <div class="card-image">
               <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800" alt="The Fair Tracker" loading="lazy" />
             </div>
@@ -416,7 +424,7 @@
           </div>
 
           <!-- HDB -->
-          <div class="project-card-modern">
+          <div class="project-card-modern" data-category="analytics">
             <div class="card-image">
               <img src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&q=80&w=800" alt="HDB flat prices" loading="lazy" />
             </div>
@@ -434,7 +442,7 @@
           </div>
 
           <!-- H4G -->
-          <div class="project-card-modern">
+          <div class="project-card-modern" data-category="app">
             <div class="card-image">
               <img src="images/H4G.jpg" alt="Hack4Good" loading="lazy" />
             </div>
@@ -452,7 +460,7 @@
           </div>
 
           <!-- Orbital -->
-          <div class="project-card-modern">
+          <div class="project-card-modern" data-category="app">
             <div class="card-image">
               <img src="images/orbital.jpg" alt="NUS Orbital" loading="lazy" />
             </div>
