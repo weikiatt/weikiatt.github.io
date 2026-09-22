@@ -20,20 +20,25 @@ navLinks.querySelectorAll("a").forEach((link) => {
 });
 
 // Navbar scroll shadow
+const navbar = document.querySelector(".custom-navbar");
+const updateNavOffset = () => {
+  document.documentElement.style.setProperty("--nav-offset", `${navbar.offsetHeight + 16}px`);
+};
+
+updateNavOffset();
+window.addEventListener("resize", updateNavOffset);
+
 window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".custom-navbar");
   navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-// Smooth scroll with navbar offset
+// Let CSS account for the live header height, rather than calculating a fragile page position.
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
     const target = document.querySelector(anchor.getAttribute("href"));
     if (!target) return;
     e.preventDefault();
-    const navbarHeight = document.querySelector(".custom-navbar").offsetHeight;
-    const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 16;
-    window.scrollTo({ top, behavior: "smooth" });
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 
@@ -100,6 +105,8 @@ const sectionLinks = [...document.querySelectorAll('.navbar-links a[href^="#"]')
 const observedSections = sectionLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
+const sectionTracker = document.querySelector(".section-tracker");
+const trackerValue = document.querySelector(".tracker-value");
 
 if (observedSections.length) {
   const navObserver = new IntersectionObserver(
@@ -109,6 +116,16 @@ if (observedSections.length) {
         sectionLinks.forEach((link) => {
           link.classList.toggle("is-current", link.getAttribute("href") === `#${entry.target.id}`);
         });
+
+        if (sectionTracker && trackerValue) {
+          const label = entry.target.querySelector(".section-header h3")?.textContent.trim() || "About";
+          if (trackerValue.textContent !== label) {
+            trackerValue.textContent = label;
+            sectionTracker.classList.remove("is-updating");
+            void sectionTracker.offsetWidth;
+            sectionTracker.classList.add("is-updating");
+          }
+        }
       });
     },
     { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
