@@ -134,3 +134,45 @@ if (observedSections.length) {
   observedSections.forEach((section) => navObserver.observe(section));
 }
 
+// Product-like motion: cursor light, magnetic controls, and responsive card depth.
+const motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (motionAllowed) {
+  document.querySelectorAll(".hero-btn, .btn-case-study, .btn-contact, .filter-button").forEach((element) => {
+    element.addEventListener("pointermove", (event) => {
+      const bounds = element.getBoundingClientRect();
+      const x = (event.clientX - bounds.left - bounds.width / 2) / bounds.width;
+      const y = (event.clientY - bounds.top - bounds.height / 2) / bounds.height;
+      element.style.transform = `translate(${x * 5}px, ${y * 5}px)`;
+    });
+    element.addEventListener("pointerleave", () => { element.style.transform = ""; });
+  });
+
+  document.querySelectorAll(".project-card-modern").forEach((card) => {
+    card.addEventListener("pointermove", (event) => {
+      const bounds = card.getBoundingClientRect();
+      const x = (event.clientX - bounds.left) / bounds.width - .5;
+      const y = (event.clientY - bounds.top) / bounds.height - .5;
+      card.style.setProperty("--tilt-x", `${-y * 4}deg`);
+      card.style.setProperty("--tilt-y", `${x * 5}deg`);
+    });
+    card.addEventListener("pointerleave", () => {
+      card.style.removeProperty("--tilt-x");
+      card.style.removeProperty("--tilt-y");
+    });
+  });
+
+  const profile = document.querySelector(".profile-container");
+  if (profile) {
+    profile.addEventListener("pointermove", (event) => {
+      const bounds = profile.getBoundingClientRect();
+      profile.style.setProperty("--profile-rotate", `${((event.clientX - bounds.left) / bounds.width - .5) * 10}deg`);
+      profile.style.setProperty("--profile-tilt", `${-((event.clientY - bounds.top) / bounds.height - .5) * 8}deg`);
+    });
+    profile.addEventListener("pointerleave", () => {
+      profile.style.setProperty("--profile-rotate", "0deg");
+      profile.style.setProperty("--profile-tilt", "0deg");
+    });
+  }
+}
+
