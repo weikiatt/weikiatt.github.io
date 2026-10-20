@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
     <meta name="description" content="Portfolio of Lee Wei Kiat, a Business Analytics undergraduate at the National University of Singapore." />
-    <title>Lee Wei Kiat | Business Analytics Portfolio</title>
+    <title>Lee Wei Kiat | Business Analytics &amp; AI Portfolio</title>
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      })();
+    </script>
   </head>
   <body class="home-page">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -29,9 +35,14 @@
         <li><a href="#projects">PROJECTS</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
-      <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-controls="navbar-links" aria-expanded="false">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-controls="navbar-links" aria-expanded="false">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
     </nav>
 
     <!-- HERO / ABOUT -->
@@ -40,13 +51,29 @@
       <div class="hero-mesh-bg"></div>
       <div class="hero-inner">
         <div class="hero-card glass-card">
-          <div class="hero-tag">Business Analytics &middot; Machine Learning</div>
-          <h1 class="hero-name typing-effect">Hello, I'm<br /><span class="highlight">Wei Kiat</span></h1>
+          <div class="hero-status"><span class="status-dot"></span> Available for AI, ML &amp; Analytics Roles</div>
+          <h1 class="hero-name">Hello, I'm <span class="highlight">Wei Kiat</span></h1>
+          <div class="hero-dynamic-role">
+            <span class="role-prefix">Specializing in</span>
+            <span class="role-ticker" id="hero-ticker">Agentic AI &amp; Machine Learning</span>
+          </div>
           <p class="hero-bio">
-            I'm a final-year undergraduate in NUS Business Analytics, pursuing a specialization in machine learning.
-            I enjoy leveraging data to solve real-world challenges — I believe that with the right
-            data and analytical approach, it is possible to solve most problems efficiently.
+            Final-year Business Analytics undergrad at NUS specializing in Machine Learning. Building data-driven AI solutions and predictive models to solve complex, real-world problems at scale.
           </p>
+          <div class="hero-stats-bar">
+            <div class="hero-stat-item">
+              <span class="stat-number">4.78 <span class="stat-sub">/ 5.0</span></span>
+              <span class="stat-label">NUS GPA (Honours)</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="stat-number">#1 <span class="stat-sub">/ 77</span></span>
+              <span class="stat-label">Top Student (Web Mining)</span>
+            </div>
+            <div class="hero-stat-item">
+              <span class="stat-number">2.9M+</span>
+              <span class="stat-label">Records Processed</span>
+            </div>
+          </div>
           <div class="hero-links">
             <a href="files/Lee Wei Kiat Resume.pdf" class="hero-btn hero-btn-primary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> Resume</a>
             <a href="https://www.linkedin.com/in/lee-wei-kiat/" class="hero-btn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
@@ -228,15 +255,15 @@
           <div class="timeline-content">
             <div class="timeline-meta">
               <div>
-                <h5>ALPS</h5>
-                <div class="role">Data Analytics and Information System Intern</div>
+                <h5>ALPS Pte Ltd</h5>
+                <div class="role">Data Analytics and Information Systems Intern</div>
               </div>
               <div class="timeline-date">Jun 2025 – Dec 2025</div>
             </div>
             <ul>
-              <li>Supported HEALIX system, dashboard and data migrations to Databricks, ensuring smooth transition.</li>
-              <li>Designed, improved, and maintained Tableau dashboards being used by stakeholders.</li>
-              <li>Designed and implemented SharePoint site to provide centralised access to updated information.</li>
+              <li>Facilitated data onboarding onto the <strong>HEALIX analytics platform (Databricks)</strong>, conducting schema validation and end-to-end data parity checks against legacy sources.</li>
+              <li>Conducted data parity checks across stakeholder <strong>Tableau dashboards</strong>, verifying metric consistency and zero visual or calculation drift.</li>
+              <li>Maintained stakeholder Tableau dashboards, resolving ad-hoc enhancement requests and updating calculations, filters, and visuals to align with changing reporting needs.</li>
             </ul>
           </div>
         </div>
@@ -376,11 +403,11 @@
             </div>
             <div class="card-content">
               <div class="card-date">Jan 2026 - Apr 2026</div>
-              <h3 class="card-title">Agentic Healthcare Analytics</h3>
+              <h3 class="card-title">NCCS Capstone Project (ANCHOR Chatbot)</h3>
               <div class="tech-tags">
-                <span>LangGraph</span><span>DuckDB</span><span>SQL</span>
+                <span>LangGraph</span><span>DeepSeek-R1</span><span>Ollama</span><span>Bio_ClinicalBERT</span><span>DuckDB</span>
               </div>
-              <p class="card-description">Engineered a multi-agent AI workflow to ground medical terminology and dynamically generate SQL queries, creating an auditable analytics assistant for clinicians.</p>
+              <p class="card-description">Local-first agentic reasoning system for natural-language clinical queries on OMOP CDM data. Architected an 8-agent LangGraph workflow executing locally via Ollama with dynamic VRAM management, hybrid concept-resolution, and deterministic statistical verification.</p>
               <div class="card-actions">
                 <a href="project-healthcare.html" class="btn-case-study">View Case Study <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
               </div>
@@ -517,6 +544,7 @@
       <p>&copy; 2026 Lee Wei Kiat. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

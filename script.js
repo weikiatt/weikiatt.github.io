@@ -1,3 +1,39 @@
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById("theme-toggle");
+
+const getPreferredTheme = () => {
+  const saved = localStorage.getItem("theme");
+  if (saved) return saved;
+  return "light"; // Clean/white light mode default
+};
+
+const applyTheme = (theme) => {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  if (themeToggleBtn) {
+    const icon = themeToggleBtn.querySelector("i");
+    if (icon) {
+      if (theme === "dark") {
+        icon.className = "fa-solid fa-sun";
+        themeToggleBtn.setAttribute("aria-label", "Switch to light theme");
+      } else {
+        icon.className = "fa-solid fa-moon";
+        themeToggleBtn.setAttribute("aria-label", "Switch to dark theme");
+      }
+    }
+  }
+};
+
+applyTheme(getPreferredTheme());
+
+if (themeToggleBtn) {
+  themeToggleBtn.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const nextTheme = current === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+  });
+}
+
 // Hamburger menu
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navbar-links");
@@ -28,17 +64,22 @@ const updateNavOffset = () => {
 updateNavOffset();
 window.addEventListener("resize", updateNavOffset);
 
-window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
+
 
 // Let CSS account for the live header height, rather than calculating a fragile page position.
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
-    const target = document.querySelector(anchor.getAttribute("href"));
+    const href = anchor.getAttribute("href");
+    if (!href || href === "#") return;
+    const target = document.querySelector(href);
     if (!target) return;
     e.preventDefault();
     target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    const targetHref = href === "#main-content" ? "#about" : href;
+    document.querySelectorAll('.navbar-links a[href^="#"]').forEach((link) => {
+      link.classList.toggle("is-current", link.getAttribute("href") === targetHref);
+    });
   });
 });
 
@@ -88,19 +129,8 @@ filterButtons.forEach((button) => {
   });
 });
 
-// A small progress signal makes long portfolio pages easier to navigate.
+// Consolidated high-performance RAF scroll pipeline
 const progressBar = document.querySelector(".scroll-progress span");
-const updateProgress = () => {
-  if (!progressBar) return;
-  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
-  progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
-};
-
-window.addEventListener("scroll", updateProgress, { passive: true });
-updateProgress();
-
-// Mark the section currently in view in the home-page navigation.
 const sectionLinks = [...document.querySelectorAll('.navbar-links a[href^="#"]')];
 const observedSections = sectionLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
@@ -108,31 +138,98 @@ const observedSections = sectionLinks
 const sectionTracker = document.querySelector(".section-tracker");
 const trackerValue = document.querySelector(".tracker-value");
 
-if (observedSections.length) {
-  const navObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        sectionLinks.forEach((link) => {
-          link.classList.toggle("is-current", link.getAttribute("href") === `#${entry.target.id}`);
-        });
+// Pre-cache section offsets on resize / init to eliminate layout thrashing
+let cachedSectionData = [];
+const cacheSectionData = () => {
+  const threshold = (navbar ? navbar.offsetHeight : 72) + 80;
+  cachedSectionData = observedSections.map((sec) => ({
+    id: sec.id,
+    top: sec.offsetTop - threshold,
+    element: sec
+  }));
+};
 
-        if (sectionTracker && trackerValue) {
-          const label = entry.target.querySelector(".section-header h3")?.textContent.trim() || "About";
-          if (trackerValue.textContent !== label) {
-            trackerValue.textContent = label;
-            sectionTracker.classList.remove("is-updating");
-            void sectionTracker.offsetWidth;
-            sectionTracker.classList.add("is-updating");
-          }
-        }
-      });
-    },
-    { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
-  );
+window.addEventListener("resize", cacheSectionData);
+cacheSectionData();
 
-  observedSections.forEach((section) => navObserver.observe(section));
-}
+const getActiveSection = (scrollY) => {
+  if (!cachedSectionData.length) return null;
+
+  // Bottom of page check
+  if ((window.innerHeight + scrollY) >= (document.documentElement.scrollHeight - 60)) {
+    return cachedSectionData[cachedSectionData.length - 1];
+  }
+
+  // Top of page check
+  if (scrollY < 120) {
+    return cachedSectionData[0];
+  }
+
+  let current = cachedSectionData[0];
+  for (const item of cachedSectionData) {
+    if (scrollY >= item.top) {
+      current = item;
+    } else {
+      break;
+    }
+  }
+  return current;
+};
+
+const updateActiveNav = (scrollY) => {
+  const activeItem = getActiveSection(scrollY);
+  if (!activeItem) return;
+
+  const activeId = activeItem.id;
+  sectionLinks.forEach((link) => {
+    link.classList.toggle("is-current", link.getAttribute("href") === `#${activeId}`);
+  });
+
+  if (sectionTracker && trackerValue) {
+    const headerEl = activeItem.element.querySelector(".section-header h3");
+    let label = "About";
+    if (headerEl) {
+      label = headerEl.textContent.replace(/^0\d\s*\/\s*/, "").trim();
+    }
+    if (trackerValue.textContent !== label) {
+      trackerValue.textContent = label;
+      sectionTracker.classList.remove("is-updating");
+      void sectionTracker.offsetWidth;
+      sectionTracker.classList.add("is-updating");
+    }
+  }
+};
+
+let scrollRafTicking = false;
+const handleScroll = () => {
+  const scrollY = window.scrollY;
+
+  // 1. Navbar scrolled state
+  if (navbar) {
+    navbar.classList.toggle("scrolled", scrollY > 40);
+  }
+
+  // 2. Progress bar
+  if (progressBar) {
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollableHeight > 0 ? (scrollY / scrollableHeight) * 100 : 0;
+    progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+  }
+
+  // 3. Active Nav Tracker (using cached offsets - 0 layout thrashing)
+  updateActiveNav(scrollY);
+
+  scrollRafTicking = false;
+};
+
+window.addEventListener("scroll", () => {
+  if (!scrollRafTicking) {
+    window.requestAnimationFrame(handleScroll);
+    scrollRafTicking = true;
+  }
+}, { passive: true });
+
+handleScroll();
 
 // Product-like motion: cursor light, magnetic controls, and responsive card depth.
 const motionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -148,19 +245,16 @@ if (motionAllowed) {
     element.addEventListener("pointerleave", () => { element.style.transform = ""; });
   });
 
-  document.querySelectorAll(".project-card-modern").forEach((card) => {
-    card.addEventListener("pointermove", (event) => {
-      const bounds = card.getBoundingClientRect();
-      const x = (event.clientX - bounds.left) / bounds.width - .5;
-      const y = (event.clientY - bounds.top) / bounds.height - .5;
-      card.style.setProperty("--tilt-x", `${-y * 4}deg`);
-      card.style.setProperty("--tilt-y", `${x * 5}deg`);
+  if (window.VanillaTilt) {
+    VanillaTilt.init(document.querySelectorAll(".project-card-modern, .contact-wrapper"), {
+      max: 6,
+      speed: 450,
+      glare: true,
+      "max-glare": 0.12,
+      perspective: 1200,
+      scale: 1.01
     });
-    card.addEventListener("pointerleave", () => {
-      card.style.removeProperty("--tilt-x");
-      card.style.removeProperty("--tilt-y");
-    });
-  });
+  }
 
   const profile = document.querySelector(".profile-container");
   if (profile) {
@@ -175,4 +269,30 @@ if (motionAllowed) {
     });
   }
 }
+
+// Dynamic hero role ticker
+const heroTicker = document.getElementById("hero-ticker");
+if (heroTicker) {
+  const roles = [
+    "AI & Agentic Systems Engineer",
+    "Machine Learning Specialist",
+    "Predictive Modeling & NLP",
+    "Big Data & PySpark Architect"
+  ];
+  let roleIndex = 0;
+
+  setInterval(() => {
+    heroTicker.style.opacity = "0";
+    heroTicker.style.transform = "translateY(5px)";
+    heroTicker.style.transition = "opacity 0.25s ease, transform 0.25s ease";
+
+    setTimeout(() => {
+      roleIndex = (roleIndex + 1) % roles.length;
+      heroTicker.textContent = roles[roleIndex];
+      heroTicker.style.opacity = "1";
+      heroTicker.style.transform = "translateY(0)";
+    }, 250);
+  }, 3200);
+}
+
 
