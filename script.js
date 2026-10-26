@@ -238,11 +238,19 @@ if (motionAllowed) {
   document.querySelectorAll(".hero-btn, .btn-case-study, .btn-contact, .filter-button").forEach((element) => {
     element.addEventListener("pointermove", (event) => {
       const bounds = element.getBoundingClientRect();
-      const x = (event.clientX - bounds.left - bounds.width / 2) / bounds.width;
-      const y = (event.clientY - bounds.top - bounds.height / 2) / bounds.height;
-      element.style.transform = `translate(${x * 5}px, ${y * 5}px)`;
+      const x = ((event.clientX - bounds.left - bounds.width / 2) / bounds.width) * 4;
+      const y = ((event.clientY - bounds.top - bounds.height / 2) / bounds.height) * 4;
+      element.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0)`;
     });
-    element.addEventListener("pointerleave", () => { element.style.transform = ""; });
+    element.addEventListener("pointerleave", () => { 
+      element.style.transform = ""; 
+    });
+    element.addEventListener("pointerdown", () => {
+      element.style.transform = "translate3d(0, 1px, 0) scale(0.97)";
+    });
+    element.addEventListener("pointerup", () => {
+      element.style.transform = "";
+    });
   });
 
   if (window.VanillaTilt) {
@@ -270,7 +278,7 @@ if (motionAllowed) {
   }
 }
 
-// Dynamic hero role ticker
+// Dynamic hero role ticker with smooth spring & morph physics
 const heroTicker = document.getElementById("hero-ticker");
 if (heroTicker) {
   const roles = [
@@ -283,15 +291,17 @@ if (heroTicker) {
 
   setInterval(() => {
     heroTicker.style.opacity = "0";
-    heroTicker.style.transform = "translateY(5px)";
-    heroTicker.style.transition = "opacity 0.25s ease, transform 0.25s ease";
+    heroTicker.style.transform = "translateY(6px) scale(0.98)";
+    heroTicker.style.filter = "blur(2px)";
+    heroTicker.style.transition = "opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), filter 0.22s ease";
 
     setTimeout(() => {
       roleIndex = (roleIndex + 1) % roles.length;
       heroTicker.textContent = roles[roleIndex];
       heroTicker.style.opacity = "1";
-      heroTicker.style.transform = "translateY(0)";
-    }, 250);
+      heroTicker.style.transform = "translateY(0) scale(1)";
+      heroTicker.style.filter = "blur(0)";
+    }, 220);
   }, 3200);
 }
 
